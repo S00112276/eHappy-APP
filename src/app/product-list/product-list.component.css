@@ -1,0 +1,65 @@
+.navbar-nav {
+    display:table;
+    width:100%;
+    margin: 0;
+}
+.navbar-nav > li {
+    float:none;
+    display:table-cell;
+    text-align:center;
+}
+
+.navbar-default {
+    background-color: #00468a;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: #d8d8d8;
+}
+
+input::placeholder {
+    color:#00468a;
+}
+
+.card-img-top {
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #fff;
+    border: 2px solid #00468a;
+    border-radius: 0.25rem;
+    margin-bottom: 20px;
+}
+
+.card-block {
+    margin-left: 10px; 
+}
+
+.cardImg {
+    margin: 10px 10px 10px 10px;
+}
+
+.addToCart {
+    display: block;
+    width: 95%;
+    background-color: #00468a;
+    margin: 10px 0px 10px 0px;
+}
+
+.sortBy {
+    text-align: right;
+}
