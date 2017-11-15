@@ -1,7 +1,51 @@
 <div class="row">
   <div class="col-md-2"></div>
-  <div class="col-md-8">
-    <div *ngIf="products && products.length"></div>
+  <div class="col-md-8 container-fluid">
+    <div class="card-group">
+      <div *ngIf="products && filteredProducts.length"></div>
+      <div class="card-deck">
+        <div class="col-md-12" *ngFor="let product of filteredProducts">
+          <div class="wrapper">
+            <div class="card">
+              <div class="card-cover">
+                <img src="https://www.aquascutum.com/media/catalog/product/cache/2/small_image/365x478/2046f34530a263677f8bb5adc8f2880d/w/p/xwpal17wbfrm_charcoal_melange_im_1.png.pagespeed.ic.KOHw5xoWMH.png">
+              </div>
+              <div class="card-content">
+                <h1 class="title">Mens Jumper</h1>
+                <h2 class="sub">men's wooly jumper</h2>
+                <div class="price">{{product.price}}</div>
+                <p class="desc">{{product.productName}}</p>
+                <div class="card-block">
+                  <div class="card-block-title">size</div>
+                  <div class="options">
+                    <a class="options" href="#">6</a>
+                    <a class="options" href="#">7</a>
+                    <a class="options" href="#">8</a>
+                    <a class="options" href="#">9</a>
+                    <a class="options" href="#">10</a>
+                  </div>
+                </div>
+                <div class="card-block">
+                  <div class="card-block-title">colors</div>
+                  <div class="color-options">
+                    <input class="orange" type="radio" name="color">
+                    <input class="green" type="radio" name="color">
+                    <input class="yellow" type="radio" name="color">
+                    <input class="blue" type="radio" name="color">
+                  </div>
+                </div>
+                <div class="card-block">
+                  <a class="btn" href="#">add to card</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--div *ngIf="products && filteredProducts.length"></div>
     <div class="col-md-4 container-fluid" *ngFor="let product of filteredProducts">
       <div class="card-group">
         <div class="card">
@@ -10,13 +54,13 @@
         </div>
         <div class="card-block">
           <h4 class="card-title">{{product.productName}}</h4>
-          <p class="card-text">{{product.price}}</p>
-          <p class="card-text"><small class="text-muted">{{product.releaseDate}}</small></p>
+          <p class="card-text price">€{{product.price}}</p>
+          <p class="card-text"><small class="text-muted">{{product.stock}}</small></p>
           <button type="button" class="btn btn-primary addToCart">Add to Cart</button>
         </div>
       </div>
     </div>
+  </div-->
   </div>
-</div>
-<div class="col-md-2"></div>
+  <div class="col-md-2"></div>
 </div>

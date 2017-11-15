@@ -3,6 +3,7 @@ export interface IProduct {
     productCode: string;
     releaseDate: string;
     price: number;
+    stock: number;
     imageUrls: 
     {
         img1: string;
