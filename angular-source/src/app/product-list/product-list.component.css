@@ -23,7 +23,7 @@
 input::placeholder {
     color:#00468a;
 }
-/*
+
 .card-img-top {
     width: 100%;
 }
@@ -66,8 +66,7 @@ input::placeholder {
 
 .sortBy {
     text-align: right;
-}*/
-
+}/*
 html, body {
   height: 100%;
   background: #e6e6e6;
@@ -134,7 +133,7 @@ html, body {
   position: relative;
   z-index: 0;
 }
-
+*/
 .title, .sub, .card-block-title {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -146,8 +145,9 @@ html, body {
 .title {
   color: #00468a;
   font-weight: 900;
+  margin-bottom: 10px;
 }
-
+/*
 .sub {
   font-size: 15px;
   margin-bottom: 10px;
@@ -158,20 +158,20 @@ html, body {
   line-height: 1.6;
   font-size: 13px;
 }
-
+*/
 .price {
   position: absolute;
-  color: #ccc;
-  top: 20px;
-  right: 30px;
+  color: goldenrod;
+  top: 60px;
+  right: 100px;
   font-size: 90px;
   font-weight: 300;
 }
 .price:before {
-  content: "$";
+  content: "€";
   position: absolute;
-  left: -20px;
-  top: 15px;
+  left: -25px;
+  top: 40px;
   font-size: 40px;
 }
 
@@ -183,14 +183,16 @@ html, body {
   margin-bottom: 10px;
 }
 
-.options {
+.option {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+           padding-right: 23px;
   text-decoration: none;
+  display: inline !important;
+  margin-left: 5%;
   color: #ccc;
   font-weight: bold;
 }
@@ -198,7 +200,7 @@ html, body {
 .active {
   color: #00468a;
 }
-
+/*
 .btn {
   background: #00468a;
   display: block;
@@ -212,10 +214,11 @@ html, body {
   text-transform: uppercase;
   margin: 40px 5% 0 5%;
   width: 90%;
-}
+}*/
 
 .color-options {
-  padding: 10px;
+  padding-right: 15px;
+  text-align: center;
 }
 .color-options > input {
   position: relative;

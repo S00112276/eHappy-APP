@@ -4,34 +4,41 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ProductSchema = new Schema({
-    Created_date: {
-        type: Date,
-        default: Date.now
-    },
-    productId: {
+    _id: {
         type: Number,
-        Required: 'Enter the ID of the product'
+        Required: [true]
     },
-    productName: {
+    name: {
         type: String,
-        default: 'name'
+        Required: [true]
     },
-    productCode: {
+    desc: {
         type: String,
-        default: 'code'
-    },
-    releaseDate: {
-        type: Date,
-        default: Date.now
+        Required: [true]        
     },
     price: {
-        type: Number,
-        default: 0
+        type: Number,        
+        Required: [true]   
     },
-    imageUrls: {
+    stock: {
+        type: Number,
+        Required: [true]   
+    },
+    sizes: {
+        type: [Number],
+        Required: [true]
+    },
+    colors: {
         type: [String],
-        default: 'URL'
+        Required: [true]
+    },
+    images: {
+        type: [String],
+        Required: [true]
+    },
+    reviews: {
+        type: [String],
+        Required: [true]
     }
 });
-
 module.exports = mongoose.model('Products', ProductSchema);

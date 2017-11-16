@@ -1,13 +1,10 @@
 export interface IProduct {
-    productName: string;
-    productCode: string;
-    releaseDate: string;
+    name: string;
+    desc: string;
     price: number;
     stock: number;
-    imageUrls: 
-    {
-        img1: string;
-        img2: string;
-        img3: string;
-    };
+    sizes: [number],
+    colours: [string],
+    images: [string],
+    reviews: [string];
 }
