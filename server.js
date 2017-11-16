@@ -1,11 +1,16 @@
+const passport = require('passport');
 const express = require('express');
-const app = express();
-const port = process.env.PORT || 3055;
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const app = express();
+const port = process.env.PORT || 3055;
 const productRoutes = require('./api/routes/productRoutes');
 const productModel = require('./api/models/productModel');
+//const userRoutes = require('./api/routes/UserRoutes');
+//const userModel = require('./api/models/UserModel');
+//const transactionRoutes = require('./api/routes/transactionRoutes');
+//const transactionModel = require('./api/models/transactionModel');
 const config = require('./config/database');
 const path = require('path');
 
@@ -33,6 +38,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
+//transactionRoutes(app);
+//userRoutes(app);
 productRoutes(app);
 
 app.use(function (req, res) {
