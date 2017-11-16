@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const config = require('../../config/database');
 
 // From http://mongoosejs.com/docs/schematypes.html
-var ObjectId = mongoose.Schema.Types.ObjectId;
-var Product = new Schema({ _id : ObjectId });
+//var ObjectId = mongoose.Schema.Types.ObjectId;
+//var Product = new Schema({ _id: ObjectId });
 
 // Transaction Schema
 const TransactionSchema = new Schema({
@@ -21,11 +21,17 @@ const TransactionSchema = new Schema({
     total: {
         type: Number,
         required: 'Enter total amount'
-    }//,
-    //products: {
-      //  Type: [Schema.Types.ObjectId],
-       // required: 'Enter the products'
-    //}
+    },
+    products: [{
+        id: {
+            type: [Schema.Types.ObjectId],
+            required: 'Enter the products'
+        },
+        price: {
+            type: Number,
+            required: true
+        }
+    }]
 });
 
 const Transaction = module.exports = mongoose.model('Transaction', TransactionSchema);
