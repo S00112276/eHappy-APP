@@ -7,8 +7,8 @@ const app = express();
 const port = process.env.PORT || 3055;
 const productRoutes = require('./api/routes/productRoutes');
 const productModel = require('./api/models/productModel');
-//const userRoutes = require('./api/routes/UserRoutes');
-//const userModel = require('./api/models/UserModel');
+const userRoutes = require('./api/routes/UserRoutes');
+const userModel = require('./api/models/UserModel');
 const transactionRoutes = require('./api/routes/transactionRoutes');
 const transactionModel = require('./api/models/transactionModel');
 const config = require('./config/database');
@@ -34,7 +34,8 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // BodyParser Middleware
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+//bodyParser.urlencoded({ extended: true }));
 
 // Passport Middleware
 app.use(passport.initialize());
