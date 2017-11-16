@@ -1,17 +1,95 @@
 <div class="row"></div>
   <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+      <div class="container-fluid">
+
+        <!-- Mobile Display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <!-- Mobile Display End -->
+
+        <!-- Search -->
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" name="listFilter" [(ngModel)]="listFilter" class="form-control" placeholder="I am searching for...">
+          </div>
+        </form>
+        <!-- Search End -->
+
+        <!-- Navigation -->
+        <div id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+            <!-- Department -->
+            <li>
+              <a href="#">All</a>
+            </li>
+            <li>
+              <a href="#">Mens</a>
+            </li>
+            <li>
+              <a href="#">Womens</a>
+            </li>
+            <li>
+              <a href="#">Kids</a>
+            </li>
+            <!-- Department End -->
+
+            <!-- Sort By -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort By
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="#">Popularity</a>
+                </li>
+                <li>
+                  <a href="#">Price</a>
+                </li>
+                <li>
+                  <a href="#">Rating</a>
+                </li>
+              </ul>
+            </li>
+            <!-- Sort By End -->
+
+          </ul>
+        </div>
+        <!-- Navigation End -->
+
+      </div>
+    </nav>
+  </div>
+  <div class="col-md-2"></div>
+<div class="row">
+  <div class="col-md-2"></div>
+
+  <!-- Products -->
   <div class="col-md-8 container-fluid">
     <div class="card-group">
       <div *ngIf="products && filteredProducts.length"></div>
       <div class="col-md-4 container-fluid" *ngFor="let product of filteredProducts">
         <div class="card-group">
           <div class="card">
+
+            <!-- Details -->
             <div class="cardImg">
               <img class="img-responsive" src="{{product.images[0]}}" alt="Card image cap">
             </div>
             <div class="card-block">
               <h4 class="card-title title">{{product.name}}</h4>
               <p class="card-text price"> {{product.price}}</p>
+              <!-- Details End -->
+
+              <!-- Sizes -->
               <div class="card-block">
                 <div class="card-block-title">size</div>
                 <div class="options">
@@ -22,6 +100,9 @@
                   <a class="option" href="#">10</a>
                 </div>
               </div>
+              <!-- Sizes End -->
+
+              <!-- Colours -->
               <div class="card-block">
                 <div class="card-block-title">colors</div>
                 <div class="color-options">
@@ -31,14 +112,21 @@
                   <input class="blue" type="radio" name="color">
                 </div>
               </div>
-              <p class="card-text">
-                <small class="text-muted">Quantity in stock {{product.stock}}</small>
-              </p>
+              <!-- Colours End -->
+
+              <!-- Stock -->
+              <span *ngIf="product.stock > 15 " class="available">Available</span>
+              <span *ngIf="product.stock == 0" class="stock">Out of Stock</span>
+              <span *ngIf="product.stock <= 15" class="stock">Hurry only {{product.stock}} left!</span>
               <button type="button" class="btn btn-primary addToCart">Add to Cart</button>
+              <!-- Stock End  -->
+
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- Products End -->
+
     <div class="col-md-2"></div>
   </div>

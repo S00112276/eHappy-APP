@@ -1,110 +1,51 @@
-<h1 class="header text-center">
-    Angular Store</h1>
+<!-- Header -->
 <div class="row">
-    <!-- Login Nav-->
-    <div class="col-md-1"></div>    
+    <div class="col-md-1"></div>
+
+    <!-- Login -->
     <div class="col-md-1">
         <ul class="nav navbar-nav">
             <li class="dropdown">
-                <span class="fa fa-user fa-3x dropdown-toggle" data-toggle="dropdown"></span>
-                <ul id="login-dp" class="dropdown-menu dropdown-menu-left">
-                    <li>
-                        <div class="row">
-                            <div class="col-md-12">
-                                Login via
-                                <div class="social-buttons">
-                                    <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                    <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                                </div>
-                                or
-                                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                        <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                       <input type="checkbox"> keep me logged-in
-                                       </label>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="bottom text-center">
-                                New here ? <a href="#"><b>Join Us</b></a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                <span class="fa fa-user fa-3x dropdown-toggle" data-toggle="dropdown" role="button"></span>
+                <form class="dropdown-menu p-4">
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail2">Email address</label>
+                        <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormPassword2">Password</label>
+                        <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input"> Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </form>
             </li>
         </ul>
     </div>
+    <!-- Login End-->
+
+    <!-- Title -->
     <div class="col-md-8">
-        <nav class="navbar navbar-default navbar-inverse" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-                </div>
-                <!-- Search Nav-->
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="I am searching for...">
-                    </div>
-                </form>
-                <!-- Department Nav-->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="hvr-overline-from-left"><a href="#">All</a></li>
-                        <li class="hvr-overline-from-left"><a href="#">Mens</a></li>
-                        <li class="hvr-overline-from-left"><a href="#">Womens</a></li>
-                        <li class="hvr-overline-from-left"><a href="#">Kids</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort By <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Popularity</a></li>
-                                <li><a href="#">Price</a></li>
-                                <li><a href="#">Rating</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Color</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Size</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-
+        <h1 class="header text-center">Angular Store</h1>
     </div>
-    <!-- Cart Nav-->
+    <!-- Title End -->
+
+    <!-- Cart -->
     <div class="col-md-1">
         <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-                <span class="fa fa-shopping-cart fa-3x dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"></span>
-                <ul class="dropdown-menu dropdown-cart" role="menu">
-                    <app-cart></app-cart>
-                </ul>
-            </li>
+            <ul class="dropdown-menu dropdown-cart" role="menu">
+                <app-cart></app-cart>
+            </ul>
+            <span class="fa fa-shopping-cart fa-3x dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"></span>
         </ul>
     </div>
+    <!-- Cart End  -->
+
     <div class="col-md-1"></div>
 </div>
-
+<!-- Header End  -->
 <app-product-list></app-product-list>
