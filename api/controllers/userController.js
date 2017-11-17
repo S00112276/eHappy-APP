@@ -7,7 +7,7 @@ const express = require('express');
 const router = express.Router();
 var isPlainObject = require('lodash.isplainobject');
 
-const User = require('../models/UserModel');
+const User = require('../models/userModel');
 
 exports.registerUser = function(req, res, next) {
     let newUser = new User({

@@ -3,17 +3,25 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const app = express();
-const port = process.env.PORT || 3055;
-const productRoutes = require('./api/routes/productRoutes');
-const productModel = require('./api/models/productModel');
-const userRoutes = require('./api/routes/UserRoutes');
-const userModel = require('./api/models/UserModel');
-const transactionRoutes = require('./api/routes/transactionRoutes');
-const transactionModel = require('./api/models/transactionModel');
-const config = require('./config/database');
-const path = require('path');
 
+//routes
+const productRoutes = require('./api/routes/productRoutes');
+const userRoutes = require('./api/routes/UserRoutes');
+const transactionRoutes = require('./api/routes/transactionRoutes');
+
+//models
+const productModel = require('./api/models/productModel');
+const userModel = require('./api/models/UserModel');
+const transactionModel = require('./api/models/transactionModel');
+
+//database
+const config = require('./config/database');
+
+const path = require('path');
+const app = express();
+
+//set port on 3055
+const port = process.env.PORT || 3055;
 // Connect to db
 mongoose.connect(config.database);
 

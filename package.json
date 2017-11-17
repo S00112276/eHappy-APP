@@ -2,7 +2,7 @@
   "name": "ehappy-api",
   "version": "1.0.0",
   "description": "RESTful API for eHappy",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
@@ -15,16 +15,18 @@
   "author": "eHappy",
   "license": "ISC",
   "devDependencies": {
+    "@types/lodash": "^4.14.85",
     "nodemon": "^1.12.1"
   },
   "dependencies": {
-    "express": "^4.16.2",
-    "mongoose": "^4.12.4",
-    "passport": "^0.4.0",
-    "passport-jwt": "^3.0.1",
     "bcryptjs": "*",
     "body-parser": "*",
     "cors": "*",
-    "jsonwebtoken": "*"
+    "express": "^4.16.2",
+    "jsonwebtoken": "*",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.12.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1"
   }
 }
