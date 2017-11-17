@@ -12,7 +12,7 @@
     "API",
     "Tutorial"
   ],
-  "author": "Daniel",
+  "author": "eHappy",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^1.12.1"
@@ -21,6 +21,10 @@
     "express": "^4.16.2",
     "mongoose": "^4.12.4",
     "passport": "^0.4.0",
-    "passport-jwt": "^3.0.1"
+    "passport-jwt": "^3.0.1",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "jsonwebtoken": "*"
   }
 }
