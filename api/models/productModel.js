@@ -16,6 +16,14 @@ var ProductSchema = new Schema({
         type: String,
         Required: [true]        
     },
+    category: {
+        type: String,
+        Required: [true]        
+    },
+    department: {
+        type: String,
+        Required: [true]        
+    },
     price: {
         type: Number,        
         Required: [true]   
