@@ -24,7 +24,7 @@
     "cors": "*",
     "express": "^4.16.2",
     "jsonwebtoken": "*",
-    "lodash": "^4.17.4",
+    "lodash.isplainobject": "^4.0.6",
     "mongoose": "^4.12.4",
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.1"
