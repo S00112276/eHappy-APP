@@ -18,7 +18,7 @@
         <!-- Search -->
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input type="text" name="listFilter" [(ngModel)]="listFilter" class="form-control" placeholder="I am searching for...">
+            <input type="text" name="search" [(ngModel)]="search" class="form-control" placeholder="I am searching for...">
           </div>
         </form>
         <!-- Search End -->
@@ -29,16 +29,16 @@
 
             <!-- Department -->
             <li>
-              <a href="#">All</a>
+              <a role="button" (click)="filterDepartment('All')">All</a>
             </li>
             <li>
-              <a href="#">Mens</a>
+              <a role="button" (click)="filterDepartment('Mens')">Mens</a>
             </li>
             <li>
-              <a href="#">Womens</a>
+              <a role="button" (click)="filterDepartment('Womens')">Womens</a>
             </li>
             <li>
-              <a href="#">Kids</a>
+              <a role="button" (click)="filterDepartment('Kids')">Kids</a>
             </li>
             <!-- Department End -->
 
@@ -49,13 +49,16 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li>
-                  <a href="#">Popularity</a>
+                  <a role="button" (click)="performSort('Popularity')">Popularity</a>
                 </li>
                 <li>
-                  <a href="#">Price</a>
+                  <a role="button" (click)="performSort('Price - Low to High')">Price - Low to High</a>
                 </li>
                 <li>
-                  <a href="#">Rating</a>
+                  <a role="button" (click)="performSort('Price - High to Low')">Price - High to Low</a>
+                </li>
+                <li>
+                  <a role="button" (click)="performSort('Rating')">Rating</a>
                 </li>
               </ul>
             </li>
@@ -118,9 +121,10 @@
 
               <!-- Stock -->
               <span *ngIf="product.stock > 15 " class="available">Available</span>
-              <span *ngIf="product.stock == 0" class="stock">Out of Stock</span>
+              <span *ngIf="product.stock == 0 " class="stock">Out of Stock</span>
               <span *ngIf="product.stock <= 15" class="stock">Hurry only {{product.stock}} left!</span>
-              <button type="button" class="btn btn-primary addToCart">Add to Cart</button>
+              <button type="button" *ngIf="product.stock > 0" class="btn btn-primary addToCart">Add to Cart</button>
+              <button type="button" *ngIf="product.stock == 0" class="btn btn-primary addToCart" disabled="true">Add to Cart</button>
               <!-- Stock End  -->
 
             </div>
@@ -128,6 +132,8 @@
         </div>
       </div>
     </div>
+    <!-- Products End -->
+
     <div class="col-md-2"></div>
   </div>
   <!-- Products End -->
