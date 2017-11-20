@@ -58,24 +58,38 @@ export class ProductListComponent implements OnInit {
 
   //#region Sort
   performSort(sortBy: string) {
-    switch (sortBy) {
-      case "Popularity": {
+    if (sortBy == 'Popularity')
+      this.filteredProducts = this.filteredProducts.sort(this.sortByPopularity)
+    else if (sortBy == 'Price - Low to High')
+      this.filteredProducts = this.filteredProducts.sort(this.sortByPriceLow)
+    else if (sortBy == 'Price - High to Low')
+      this.filteredProducts = this.filteredProducts.sort(this.sortByPriceHigh)
+    else if (sortBy == 'Rating')
+      this.filteredProducts = this.filteredProducts.sort(this.sortByRating)
+  }
 
-      }
-      case "Price - Low to High": {
-        this.filteredProducts.sort((product1, product2) => {
-          if (product1.price < product2.price) return -1;
-          else if (product1.price < product2.price) return 1;
-          else return 0;
-        });
-      }
-      case "Price - High to Low": {
+  sortByPopularity(p1: IProduct, p2: IProduct) {
+    if (p1.stock > p2.stock) return 1
+    else if (p1.price < p2.price) return 0
+    else return -1
+  }
 
-      }
-      case "Rating": {
+  sortByPriceLow(p1: IProduct, p2: IProduct) {
+    if (p1.price > p2.price) return 1
+    else if (p1.price < p2.price) return 0
+    else return -1
+  }
 
-      }
-    }
+  sortByPriceHigh(p1: IProduct, p2: IProduct) {
+    if (p1.price < p2.price) return 1
+    else if (p1.price > p2.price) return 0
+    else return -1
+  }
+
+  sortByRating(p1: IProduct, p2: IProduct) {
+    if (p1.reviews > p2.reviews) return 1
+    else if (p1.price < p2.price) return 0
+    else return -1
   }
   //#endregion
 
