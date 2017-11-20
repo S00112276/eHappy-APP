@@ -22,7 +22,11 @@
                             <input type="checkbox" class="form-check-input"> Remember me
                         </label>
                     </div>
+<<<<<<< Updated upstream
                     <button type="submit" class="btn btn-primary signIn" value="signIn">Sign in</button>
+=======
+                    <button type="submit" class="btn btn-primary signIn">Sign in</button>
+>>>>>>> Stashed changes
 
                     <div class="bottom text-center">
                         <h5>New here?
@@ -46,10 +50,15 @@
     <!-- Cart -->
     <div class="col-md-1">
         <ul class="nav navbar-nav navbar-right">
-            <ul class="dropdown-menu cart" role="menu">
-                <app-cart></app-cart>
-            </ul>
-            <span class="fa fa-shopping-cart fa-3x dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"></span>
+            <!-- Large modal -->
+            <span class="fa fa-shopping-cart fa-3x dropdown-toggle" data-toggle="modal" data-target=".bd-example-modal-lg" role="button" aria-expanded="false"></span>
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <app-cart></app-cart>
+                    </div>
+                </div>
+            </div>
         </ul>
     </div>
     <!-- Cart End  -->
