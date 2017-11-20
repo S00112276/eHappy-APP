@@ -17,6 +17,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
 
 // adding routes
 const routes: Routes = [
@@ -33,7 +34,8 @@ const routes: Routes = [
     ProductListComponent,
     CartComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
