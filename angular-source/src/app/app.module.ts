@@ -21,7 +21,7 @@ import { LoginComponent } from './login/login.component';
 
 // adding routes
 const routes: Routes = [
-  // { path: '', redirectTo: 'app', pathMatch: 'full' },
+  { path: '', redirectTo: 'app', pathMatch: 'full' },
   { path: 'app', component: AppComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent }
