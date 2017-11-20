@@ -7,26 +7,26 @@
         <ul class="nav navbar-nav">
             <ul class="dropdown">
                 <span class="fa fa-user fa-3x dropdown-toggle" data-toggle="dropdown" role="button"></span>
-                <form class="dropdown-menu p-4 login">
+                <form (submit)='onLoginSubmit()' class="dropdown-menu p-4 login">
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail2">Email address</label>
-                        <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+                        <label>Email address</label>
+                        <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="email@example.com">
                     </div>
                     <div class="form-group">
-                        <label for="exampleDropdownFormPassword2">Password</label>
-                        <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                        <label>Password</label>
+                        <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password">
                     </div>
 
-                        <div class="form-check inline">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input"> Remember me
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary signIn">Sign in</button>
+                    <div class="form-check inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input"> Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary signIn" value="signIn">Sign in</button>
 
                     <div class="bottom text-center">
                         <h5>New here?
-                            <a href="#">
+                            <a [routerLink]="['/register']">
                                 <b>Register</b>
                             </a>
                         </h5>
