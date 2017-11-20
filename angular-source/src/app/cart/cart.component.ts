@@ -8,7 +8,7 @@ import { Cart, CartItem, CartService } from '../shared/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  cart: Cart;
+  cart: Cart = new Cart();
   productsInCart: CartItem[];
   
   constructor() { }

@@ -1,73 +1,74 @@
-<ul class="nav navbar-nav pull-xs-right">
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-            <!-- Cart: {{cart.totalCost | currency: 'eur' :true:'1.2-2' }} ({{ cart.count }} items) -->
-        </a>
-    </li>
+<ul class="nav navbar-nav navbar-right">
+    <ul class="dropdown-menu cart" role="menu">
+        <h1>Your Cart</h1>
+        <p>Cart: {{cart.totalCost | currency: 'eur' :true:'1.2-2' }} ({{ cart.count }} items)</p>
+       
+<!--<table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Product name</th>
+                    <th>Price</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Product 1</td>
+                    <td>100$</td>
+                    <td>
+                        <a>
+                            <i class="fa fa-remove"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Product 2</td>
+                    <td>100$</td>
+                    <td>
+                        <a>
+                            <i class="fa fa-remove"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Product 3</td>
+                    <td>100$</td>
+                    <td>
+                        <a>
+                            <i class="fa fa-remove"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Product 4</td>
+                    <td>100$</td>
+                    <td>
+                        <a>
+                            <i class="fa fa-remove"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="total">
+                    <th scope="row">5</th>
+                    <td>Total</td>
+                    <td>400$</td>
+                </tr>
+            </tbody>
+        </table> 
+
+        <button class="btn btn-primary waves-effect waves-light">Checkout</button>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">Close</button>
+        </div> -->
+    <!-- Shopping Bag View on Load -->
+    </ul>
+    <span class="fa fa-shopping-bag fa-3x dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+        <p id="count" class="text">{{ cart.count }}</p>
+    </span>   
 </ul>
-.
-<h1>Your Cart</h1>
-
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Product name</th>
-            <th>Price</th>
-            <th>Remove</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Product 1</td>
-            <td>100$</td>
-            <td>
-                <a>
-                    <i class="fa fa-remove"></i>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Product 2</td>
-            <td>100$</td>
-            <td>
-                <a>
-                    <i class="fa fa-remove"></i>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Product 3</td>
-            <td>100$</td>
-            <td>
-                <a>
-                    <i class="fa fa-remove"></i>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">4</th>
-            <td>Product 4</td>
-            <td>100$</td>
-            <td>
-                <a>
-                    <i class="fa fa-remove"></i>
-                </a>
-            </td>
-        </tr>
-        <tr class="total">
-            <th scope="row">5</th>
-            <td>Total</td>
-            <td>400$</td>
-        </tr>
-    </tbody>
-</table>
-
-<button class="btn btn-primary waves-effect waves-light">Checkout</button>
-
-<div class="modal-footer">
-    <button type="button" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">Close</button>
-</div>
