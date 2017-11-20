@@ -11,6 +11,7 @@ export class CartComponent implements OnInit {
   cart: Cart = new Cart();
   productsInCart: CartItem[];
   
+  
   constructor() { }
 
   ngOnInit() {

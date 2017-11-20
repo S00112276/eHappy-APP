@@ -194,7 +194,7 @@
               <span *ngIf="product.stock > 15 " class="available">Available</span>
               <span *ngIf="product.stock == 0 " class="stock">Out of Stock</span>
               <span *ngIf="product.stock <= 15" class="stock">Hurry only {{product.stock}} left!</span>
-              <button type="button" *ngIf="product.stock > 0" class="btn btn-primary addToCart">Add to Cart</button>
+              <button type="button" *ngIf="product.stock > 0" class="btn btn-primary addToCart" (click)="addProduct()">Add to Cart</button>
               <button type="button" *ngIf="product.stock == 0" class="btn btn-primary addToCart" disabled="true">Add to Cart</button>
               <!-- Stock End  -->
 
