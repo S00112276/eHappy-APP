@@ -8,6 +8,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 
 //services
 import { ProductService } from './shared/product.service';
+import { AuthService } from './shared/auth.service';
+import { ValidateService } from './shared/validate.service';
 
 //components 
 import { AppComponent } from './app.component';
@@ -41,7 +43,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FlashMessagesModule
   ],
-  providers: [ProductService],
+  providers: [
+    ProductService,
+    AuthService,
+    ValidateService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
