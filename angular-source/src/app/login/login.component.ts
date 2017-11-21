@@ -38,14 +38,14 @@ export class LoginComponent implements OnInit {
           cssClass: 'alert-success',
           timeout: 6000
         });
-        this.router.navigate(['login']);
+        this.router.navigate(['login']);//this should go to main page?
       }
       else {
         this.flashMessage.show(data.messages, {
           cssClass: 'alert-danger',
           timeout: 6000
         });
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard']);//this should go to main page?
       }
     });
 
