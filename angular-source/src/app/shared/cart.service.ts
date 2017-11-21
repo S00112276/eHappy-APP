@@ -24,7 +24,6 @@ export class CartService {
     public addProduct(product: IProduct): CartItem {
         // Find CartItem in items
         let item: CartItem = this.findItem(product._id);
-
         //Check if it was found
         if (item) {
             // Item was found
@@ -35,17 +34,18 @@ export class CartService {
         } else {
             // Item was not found
             // Create the cart item
-            item = {
+            this.cart.items.push({
                 product: product,
                 count: 1,
                 totalCost: product.price
-            };
-            // Add item to items
-            this.cart.count++;
-            // Increase amount in the cart
-            this.cart.totalCost += product.price;
-            return item;
+            });
         }
+        product.stock--;
+        // Add item to items
+        this.cart.count++;
+        // Increase amount in the cart
+        this.cart.totalCost += product.price;
+        return item;
     }
 
     // Decreases the number of the same products in the cart
@@ -108,9 +108,9 @@ export class CartService {
         // Find index of cart item
         let index: number = this.cart.items.indexOf(item);
         // Check if item found
-        if(index !== -1) {
+        if (index !== -1) {
             // Remove from array
-            this.cart.items.splice(index,1);
+            this.cart.items.splice(index, 1);
         }
     }
 }

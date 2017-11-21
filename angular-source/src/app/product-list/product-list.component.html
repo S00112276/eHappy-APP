@@ -168,8 +168,8 @@
               <div class="card-block">
                 <span *ngIf="product.stock > 15 " class="available">Available</span>
                 <span *ngIf="product.stock == 0 " class="stock">Out of Stock</span>
-                <span *ngIf="product.stock <= 15" class="stock">Hurry only {{product.stock}} left!</span>
-                <button type="button" *ngIf="product.stock > 0" class="btn btn-primary addToCart">Add to Cart</button>
+                <span *ngIf="product.stock <= 15 && product.stock != 0" class="stock">Hurry only {{product.stock}} left!</span>
+                <button type="button" *ngIf="product.stock > 0" class="btn btn-primary addToCart" (click)="addToCart(product)">Add to Cart</button>
                 <button type="button" *ngIf="product.stock == 0" class="btn btn-primary addToCart" disabled="true">Add to Cart</button>
               </div>
               <!-- Stock End  -->
