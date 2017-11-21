@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 import { IProduct } from '../product-list/product';
 
 export interface CartItem {
@@ -20,7 +21,7 @@ export class CartService {
     // or increases the number of same products in the cart.
     // Also updates the totalCost and count of items in the cart.
 
-    addProduct(product: IProduct): CartItem {
+    public addProduct(product: IProduct): CartItem {
         // Find CartItem in items
         let item: CartItem = this.findItem(product._id);
 

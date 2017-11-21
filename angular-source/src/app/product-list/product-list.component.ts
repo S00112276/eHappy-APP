@@ -2,6 +2,9 @@ import { ProductService } from '../shared/product.service';
 import { IProduct } from './product'
 import { Component, OnInit } from '@angular/core';
 
+import { Cart, CartItem } from '../shared/cart.service';
+
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
