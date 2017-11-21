@@ -23,9 +23,9 @@ import { HomeComponent } from './home/home.component';
 // adding routes
 const routes: Routes = [
   { path: '', redirectTo: 'app', pathMatch: 'full' },
-  { path: 'app', component: AppComponent, canActivate:[AuthGuard]},
+  { path: 'app', component: AppComponent},//, canActivate:[AuthGuard]
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent , canActivate:[AuthGuard]}
+  { path: 'profile', component: ProfileComponent }// canActivate:[AuthGuard]
   //   { path: 'product/:id', component: ProductDetailComponent }
 ];
 
