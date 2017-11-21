@@ -1,16 +1,36 @@
 <!-- Shopping Cart Dropdown -->
 <ul class="nav navbar-nav pull-xs-right">
     <li class="nav-item dropdown">
-        <span class="fa fa-shopping-bag fa-3x dropdown-toggle " data-toggle="dropdown" data-hover="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+        <span class="fa fa-shopping-bag fa-3x dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             <p id="count" class="text">{{ cart.count }}</p>
         </span>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cart">
+        <div class="dropdown-menu dropdown-menu-right cart" aria-labelledby="cart">
             <div *ngIf="cart.count">
                 <div class="table-responsive">
                     <table class="table table-sm table-striped table-bordered table-cart">
                         <tbody>
-                            <tr>
+                            <tr *ngFor="let item of cart.items">
+                                <td>
+                                    <div class="itemCart">
+                                        <img class="img-responsive" src="{{item.product.images[0]}}" alt="Card image cap">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="itemCart">
+                                        <tr>
+                                            {{item.product.name}}
+                                        </tr>
+                                        <tr>
+                                            Quantity: {{item.count}}
+                                        </tr>
+                                        <tr>
+                                            Price: {{item.totalCost}}
+                                        </tr>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- <tr>
                                 <td class="font-weight-bold">Title</td>
                                 <td class="font-weight-bold">Price</td>
                                 <td class="font-weight-bold">Count</td>
@@ -18,7 +38,7 @@
                                 <td class="font-weight-bold">Remove</td>
                             </tr>
                             <tr *ngFor="let item of cart.items">
-                                <td>{{item.product.name}}</td>
+                                <td><div style="overflow: auto; height: 60px; width: 120px;">{{item.product.name}}</div></td>
                                 <td>{{item.product.price}}</td>
                                 <td>{{item.count}}</td>
                                 <td>{{item.totalCost | currency: 'eur' :true: '1.2-2'}}</td>
@@ -27,7 +47,7 @@
                                         <i class="fa fa-remove"></i>
                                     </a>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
