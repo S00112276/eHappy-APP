@@ -191,4 +191,8 @@ input::placeholder {
   height:1px;
   width:100%;
   border-top:1px solid gray;
+  
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
  }
