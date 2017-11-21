@@ -10,7 +10,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ProductService } from './shared/product.service';
 import { AuthService } from './shared/auth.service';
 import { ValidateService } from './shared/validate.service';
-
+import {AuthGuard} from '../guards/auth.guard';
 //components 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -22,9 +22,9 @@ import { LoginComponent } from './login/login.component';
 // adding routes
 const routes: Routes = [
   { path: '', redirectTo: 'app', pathMatch: 'full' },
-  { path: 'app', component: AppComponent },
+  { path: 'app', component: AppComponent, canActivate:[AuthGuard]},
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent }
+  { path: 'profile', component: ProfileComponent , canActivate:[AuthGuard]}
   //   { path: 'product/:id', component: ProductDetailComponent }
 ];
 
@@ -48,7 +48,8 @@ const routes: Routes = [
   providers: [
     ProductService,
     AuthService,
-    ValidateService
+    ValidateService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

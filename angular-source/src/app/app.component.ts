@@ -49,8 +49,8 @@ export class AppComponent  implements OnInit {
         this.router.navigate(['dashboard']);
       }
     });
-
   }
+  
   // for navbar logout
   onLogoutClick() {
     this.authService.logout();
@@ -58,7 +58,7 @@ export class AppComponent  implements OnInit {
       cssClass: 'alert-succes',
       timeout: 3000
     });
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/login']);// return to the main page?
     return false;
   }
 }
