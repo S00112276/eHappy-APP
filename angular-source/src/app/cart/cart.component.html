@@ -1,7 +1,7 @@
 <!-- Shopping Cart Dropdown -->
 <ul class="nav navbar-nav pull-xs-right">
     <li class="nav-item dropdown">
-        <span class="fa fa-shopping-bag fa-3x dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+        <span class="fa fa-shopping-bag fa-3x dropdown-toggle " data-toggle="dropdown" data-hover="dropdown"
             aria-haspopup="true" aria-expanded="false">
             <p id="count" class="text">{{ cart.count }}</p>
         </span>
@@ -15,12 +15,18 @@
                                 <td class="font-weight-bold">Price</td>
                                 <td class="font-weight-bold">Count</td>
                                 <td class="font-weight-bold">Total</td>
+                                <td class="font-weight-bold">Remove</td>
                             </tr>
                             <tr *ngFor="let item of cart.items">
                                 <td>{{item.product.name}}</td>
                                 <td>{{item.product.price}}</td>
                                 <td>{{item.count}}</td>
                                 <td>{{item.totalCost | currency: 'eur' :true: '1.2-2'}}</td>
+                                <td>
+                                    <a role="button">
+                                        <i class="fa fa-remove"></i>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

@@ -23,7 +23,8 @@ export class CartService {
 
     public addProduct(product: IProduct): CartItem {
         // Find CartItem in items
-        let item: CartItem = this.findItem(product._id);
+        let item: CartItem = this.findItem(product);
+        product.stock--;
         //Check if it was found
         if (item) {
             // Item was found
@@ -40,7 +41,6 @@ export class CartService {
                 totalCost: product.price
             });
         }
-        product.stock--;
         // Add item to items
         this.cart.count++;
         // Increase amount in the cart
@@ -53,7 +53,7 @@ export class CartService {
     // Updates the total cost & count of items in the cart.
     removeProduct(product: IProduct): CartItem {
         // Find CartItem in items
-        let item: CartItem = this.findItem(product._id);
+        let item: CartItem = this.findItem(product);
         // Check if item found
         if (item) {
             // Decrease the Count
@@ -87,9 +87,9 @@ export class CartService {
     }
 
     // Returns cart item by product _id
-    findItem(id: string): CartItem {
+    findItem(product: IProduct): CartItem {
         for (let i = 0; i < this.cart.items.length; i++) {
-            if (this.cart.items[i].product._id === id) {
+            if (this.cart.items[i].product === product) {
                 return this.cart.items[i];
             }
         }
