@@ -10,10 +10,10 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class LoginComponent implements OnInit {
 
-
   //for login
   email: String;
   password: String;
+
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           cssClass: 'alert-success',
           timeout: 6000
         });
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['login']);
       }
       else {
         this.flashMessage.show(data.messages, {
