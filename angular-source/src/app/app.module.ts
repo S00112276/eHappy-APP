@@ -10,7 +10,9 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ProductService } from './shared/product.service';
 import { AuthService } from './shared/auth.service';
 import { ValidateService } from './shared/validate.service';
-import {AuthGuard} from '../guards/auth.guard';
+import { AuthGuard } from '../guards/auth.guard';
+import { CartService } from './shared/cart.service';
+
 //components 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -19,6 +21,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 // adding routes
 const routes: Routes = [
@@ -37,7 +40,8 @@ const routes: Routes = [
     RegisterComponent,
     ProfileComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ const routes: Routes = [
     FlashMessagesModule
   ],
   providers: [
+    CartService,
     ProductService,
     AuthService,
     ValidateService,

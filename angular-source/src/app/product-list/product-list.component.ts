@@ -2,6 +2,9 @@ import { ProductService } from '../shared/product.service';
 import { IProduct } from './product'
 import { Component, OnInit } from '@angular/core';
 
+import { Cart, CartItem, CartService } from '../shared/cart.service';
+
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -12,7 +15,7 @@ export class ProductListComponent implements OnInit {
   filteredProducts: IProduct[];
   errorMessage: string;
 
-  constructor(private _productService: ProductService) {
+  constructor(private _productService: ProductService, private _cartService: CartService) {
   }
 
   onNotify(message: string): void {
@@ -26,6 +29,12 @@ export class ProductListComponent implements OnInit {
     },
       error => this.errorMessage = <any>error);
   }
+
+  //#region Cart
+  addToCart(product: IProduct) {
+    this._cartService.addProduct(product);
+  }
+  //#endregion
 
   //#region Search
   _search: string;
