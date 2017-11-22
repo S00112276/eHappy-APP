@@ -5,7 +5,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const express = require('express');
 const router = express.Router();
-var isPlainObject = require('lodash.isplainobject');
+//var isPlainObject = require('lodash.isplainobject');
 
 const User = require('../models/userModel');
 
