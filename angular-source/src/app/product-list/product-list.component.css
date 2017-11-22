@@ -24,6 +24,10 @@ input::placeholder {
     margin-bottom: 20px;
 }
 
+.borders {
+  margin: 0 10% 0 10%;
+}
+
 .card-block {
     margin-left: 10px; 
 }
@@ -184,15 +188,3 @@ input::placeholder {
   color: rgb(34, 190, 34);
   font-size: 12px;
 }
-
-.divider{
-  margin-top:5px;
-  margin-bottom:5px;
-  height:1px;
-  width:100%;
-  border-top:1px solid gray;
-  
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
- }

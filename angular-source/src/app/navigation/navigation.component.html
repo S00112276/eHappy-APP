@@ -1,27 +1,51 @@
-<!-- Header -->
-<div class="row inline">
-  
-      <!-- Login -->
-       <div class="col-md-2">
-                  <div class="col-md-1">
-                      <ul class="nav navbar-nav">
-                          <ul class="dropdown">
-                              <app-login></app-login>
-                          </ul>
-                      </ul>
-                  </div>
-      </div>
-      <!-- Login End-->
-  
-      <!-- Title -->
-      <div class="col-md-8">
-          <h1 class="inline">Angular Store</h1>
-      </div>
-      <!-- Title End -->
-  
-      <!-- Cart -->
-      <div class="col-md-2">
-          <app-cart></app-cart>
-      </div>
-      <!-- Cart End  -->
-  </div>
+<!-- Nav -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+
+        <!-- Mobile Display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" role="button" [routerLink]="['']">Angular Store</a>
+        </div>
+        <!-- Mobile Display End -->
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+                <!-- Login -->
+                <li>
+                    <ul class="dropdown">
+                        <app-login></app-login>
+                    </ul>
+                </li>
+                <!-- Login End -->
+
+
+                <!-- Pages -->
+                <li>
+                    <a role="button" [routerLink]="['/products']">Products</a>
+                </li>
+                <!-- Pages End -->
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <!-- Cart -->
+                <ul>
+                    <li>
+                        <app-cart></app-cart>
+                    <li>
+                </ul>
+                <!-- Cart End -->
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Nav -->
