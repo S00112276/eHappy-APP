@@ -25,10 +25,12 @@ import { NavigationComponent } from './navigation/navigation.component';
 
 // adding routes
 const routes: Routes = [
-  { path: '', redirectTo: 'app', pathMatch: 'full' },
-  { path: 'app', component: AppComponent},//, canActivate:[AuthGuard]
+  {path:'', component: HomeComponent},
+  // { path: '', redirectTo: 'app', pathMatch: 'full' },
+  // { path: 'app', component: AppComponent},//, canActivate:[AuthGuard]
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent }// canActivate:[AuthGuard]
+  { path: 'profile', component: ProfileComponent },// canActivate:[AuthGuard]
+  { path: 'products', component: ProductListComponent },
   //   { path: 'product/:id', component: ProductDetailComponent }
 ];
 

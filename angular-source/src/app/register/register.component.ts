@@ -50,7 +50,7 @@ export class RegisterComponent implements OnInit {
     this.authService.registerUser(user).subscribe(data => {
       if (data.success) {
         this.flashMessagesService.show('You are now registered and can log in!', { cssClass: 'alert-success', timeout: 4000 });
-        this.router.navigate(['/']); //this should navigate to my main component 
+        this.router.navigate(['']); //this should navigate to my main component 
       }
       else {
         this.flashMessagesService.show('Something went wrong! Plase try again!', { cssClass: 'alert-danger', timeout: 4000 });

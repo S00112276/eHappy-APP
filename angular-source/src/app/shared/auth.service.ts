@@ -18,6 +18,7 @@ export class AuthService {
 
   //subscribe to observable
   registerUser(user) {
+    console.log("register user" + user);
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');// add value to the header
     let ep = this.prepEndpoint('users/register');
@@ -27,7 +28,7 @@ export class AuthService {
   }
 
   authUser(user) {
-    console.log("AS" + user.email);
+    console.log("auth user" + user.email);
     // let headers = new Headers({ 'Content-Type': 'application/json' });
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -73,7 +74,7 @@ export class AuthService {
     if (this.isDev) {
       return ep;
     } else {
-      return 'http://localhost:8080/' + ep;
+      return 'http://localhost:8080/' + ep;//what shoud i put here ?
     }
   }
 
