@@ -1,103 +1,95 @@
 <!-- Navigation -->
 <app-navigation></app-navigation>
 <!-- Navigation -->
+
 <!-- Nav -->
 <div class="row borders">
-    <nav class="navbar navbar-default navbar-inverse" role="navigation">
-      <div class="container-fluid">
+  <nav class="navbar navbar-default navbar-inverse collapse navbar-collapse" role="navigation">
+    <div class="container-fluid">
 
-        <!-- Mobile Display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <!-- Mobile Display End -->
+      <!-- Navigation -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav">
 
-        <!-- Search -->
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" name="search" [(ngModel)]="search" class="form-control" placeholder="I am searching for...">
-          </div>
-        </form>
-        <!-- Search End -->
+          <!-- Search -->
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" name="search" [(ngModel)]="search" class="form-control" placeholder="I am searching for...">
+            </div>
+          </form>
+          <!-- Search End -->
 
-        <!-- Navigation -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-          <ul class="nav navbar-nav">
+          <!-- Department -->
+          <li>
+            <a role="button" (click)="filterDepartment('All')">All</a>
+          </li>
+          <li>
+            <a role="button" (click)="filterDepartment('Mens')">Mens</a>
+          </li>
+          <li>
+            <a role="button" (click)="filterDepartment('Womens')">Womens</a>
+          </li>
+          <li>
+            <a role="button" (click)="filterDepartment('Kids')">Kids</a>
+          </li>
+          <!-- Department End -->
 
-            <!-- Department -->
-            <li>
-              <a role="button" (click)="filterDepartment('All')">All</a>
-            </li>
-            <li>
-              <a role="button" (click)="filterDepartment('Mens')">Mens</a>
-            </li>
-            <li>
-              <a role="button" (click)="filterDepartment('Womens')">Womens</a>
-            </li>
-            <li>
-              <a role="button" (click)="filterDepartment('Kids')">Kids</a>
-            </li>
-            <!-- Department End -->
+          <!-- Sort By -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort By
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a role="button" (click)="performSort('Popularity')">Popularity</a>
+              </li>
+              <li>
+                <a role="button" (click)="performSort('Price - Low to High')">Price - Low to High</a>
+              </li>
+              <li>
+                <a role="button" (click)="performSort('Price - High to Low')">Price - High to Low</a>
+              </li>
+              <li>
+                <a role="button" (click)="performSort('Rating')">Rating</a>
+              </li>
+            </ul>
+          </li>
+          <!-- Sort By End -->
 
-            <!-- Sort By -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort By
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a role="button" (click)="performSort('Popularity')">Popularity</a>
-                </li>
-                <li>
-                  <a role="button" (click)="performSort('Price - Low to High')">Price - Low to High</a>
-                </li>
-                <li>
-                  <a role="button" (click)="performSort('Price - High to Low')">Price - High to Low</a>
-                </li>
-                <li>
-                  <a role="button" (click)="performSort('Rating')">Rating</a>
-                </li>
-              </ul>
-            </li>
-            <!-- Sort By End -->
-
-          </ul>
-        </div>
-        <!-- Navigation End -->
-
+        </ul>
       </div>
-    </nav>
+      <!-- Navigation End -->
+
+    </div>
+  </nav>
 </div>
 <!-- Nav -->
 
 <!-- Refine -->
-<a role="button" data-toggle="popover" data-placement="bottom" title="Refine by"><i class="fa fa-cog fa-3x"></i></a>
+<button class="refineBy visible-xs-block" data-toggle="popover" data-placement="left" title="Refine by">
+  <i class="fa fa-cog fa-3x"></i>
+</button>
 <div id="popover-content" class="hide">
-    <form class="form-inline" role="form">
-      <div class="form-group">
-        <select class="form-control">
-          <option>Department</option>
-          <option>Mens</option>
-          <option>Womens</option>
-          <option>Kids</option>
-        </select> 
-        <select class="form-control">
-            <option>Sort By</option>
-            <option>Popularity</option>
-            <option>Price - Low to High</option>
-            <option>Price - High to Low</option>
-            <option>Rating</option>
-          </select> 
-        <button type="submit" class="btn btn-primary">Refine</button>                                  
-      </div>
-    </form>
-  </div>
-<!-- Refine -->  
+  <form class="form-inline" role="form">
+    <div class="form-group">
+      <select class="form-control">
+        <option>Department</option>
+        <option>Mens</option>
+        <option>Womens</option>
+        <option>Kids</option>
+      </select>
+      <select class="form-control">
+        <option>Sort By</option>
+        <option>Popularity</option>
+        <option>Price - Low to High</option>
+        <option>Price - High to Low</option>
+        <option>Rating</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Refine</button>
+    </div>
+  </form>
+</div>
+<!-- Refine -->
 
 <!-- Products -->
 <div class="row">

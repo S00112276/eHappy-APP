@@ -188,3 +188,14 @@ input::placeholder {
   color: rgb(34, 190, 34);
   font-size: 12px;
 }
+
+.refineBy {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  z-index: 9999;
+}
+
+.refine {
+  background-color: #333;  
+}
