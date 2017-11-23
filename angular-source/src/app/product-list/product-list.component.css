@@ -191,11 +191,11 @@ input::placeholder {
 
 .refineBy {
   position: fixed;
+  width: 60px;
   top: 80px;
   right: 0;
-  z-index: 9999;
+  z-index: 100;
 }
 
 .refine {
-  background-color: #333;  
 }
