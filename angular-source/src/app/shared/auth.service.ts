@@ -8,12 +8,12 @@ export class AuthService {
 
   authToken: any;
   user: any;
-  //isDev: boolean;
+  isDev: boolean;
 
   constructor(
     private http: Http
   ) {
-     //this.isDev = true; // Change to false before deployment
+    this.isDev = false;
   }
 
   //subscribe to observable
@@ -21,20 +21,18 @@ export class AuthService {
     console.log("register user" + user);
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');// add value to the header
-  //  let ep = this.prepEndpoint('/register');
-   return this.http.post( 'http://localhost:3055/users/register', user, { headers: headers })
-  //  return this.http.post(ep, user, { headers: headers })
+    let ep = this.prepEndpoint('users/register');
+    return this.http.post(ep, user, { headers: headers })
       .map(res => res.json());
   }
 
   authUser(user) {
-    console.log("auth user" + user.email);
-    // let headers = new Headers({ 'Content-Type': 'application/json' });
+    console.log("auth user" + user);
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-   // let ep = this.prepEndpoint('/authenticate');
-    return this.http.post('http://localhost:3055/users/authenticate', user, { headers: headers })
-   // return this.http.post(ep, user, { headers: headers })
+    let ep = this.prepEndpoint('/users/authenticate');
+    // return this.http.post('http://localhost:3055/users/authenticate', user, { headers: headers })
+    return this.http.post(ep, user, { headers: headers })
       .map(res => res.json().data);
   }
 
@@ -71,12 +69,12 @@ export class AuthService {
     localStorage.clear();
   }
 
-  // prepEndpoint(ep) {
-  //   if (this.isDev) {
-  //     return ep;
-  //   } else {
-  //     return 'http://localhost:3055' + ep;
-  //   }
-  // }
+  prepEndpoint(ep) {
+    if (this.isDev) {
+      return ep;
+    } else {
+      return 'http://localhost:3055/' + ep;
+    }
+  }
 
 }
