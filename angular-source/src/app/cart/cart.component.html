@@ -6,6 +6,7 @@
             <p id="count" class="text">{{ cart.count }}</p>
         </span>
         <div class="dropdown-menu dropdown-menu-right cart" aria-labelledby="cart">
+            <h1 class="text-center">Your Cart</h1>
             <div *ngIf="cart.count">
                 <div *ngFor="let item of cart.items">
                     <div class="row">
@@ -35,10 +36,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <a [routerLink]="['/cart']" class="btn btn-primary pull-xs-right btn-cart">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
-                        <a [routerLink]="['/checkout']" class="btn btn-success pull-xs-right btn-cart">
-                            <i class="fa fa-credit-card" aria-hidden="true"></i> Checkout</a>
+                            <a [routerLink]="['/cart']" class="btn btn-primary btn-lg btn-block btnblack">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
+                            <a [routerLink]="['/checkout']" class="btn btn-default btn-lg btn-block btn-inverse">
+                                <i class="fa fa-credit-card" aria-hidden="true"></i> Checkout</a>
                     </div>
                 </div>
             </div>
@@ -46,78 +47,3 @@
         </div>
     </li>
 </ul>
-<!--<ul class="nav navbar-nav navbar-right">
-    <ul class="dropdown-menu cart" role="menu">
-        <h1>Your Cart</h1>
-        <p>Cart: {{cart.totalCost | currency: 'eur' :true:'1.2-2' }} ({{ cart.count }} items)</p>
-       
-<table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Product name</th>
-                    <th>Price</th>
-                    <th>Remove</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Product 1</td>
-                    <td>100$</td>
-                    <td>
-                        <a>
-                            <i class="fa fa-remove"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Product 2</td>
-                    <td>100$</td>
-                    <td>
-                        <a>
-                            <i class="fa fa-remove"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Product 3</td>
-                    <td>100$</td>
-                    <td>
-                        <a>
-                            <i class="fa fa-remove"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Product 4</td>
-                    <td>100$</td>
-                    <td>
-                        <a>
-                            <i class="fa fa-remove"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="total">
-                    <th scope="row">5</th>
-                    <td>Total</td>
-                    <td>400$</td>
-                </tr>
-            </tbody>
-        </table> 
-
-        <button class="btn btn-primary waves-effect waves-light">Checkout</button>
-
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">Close</button>
-        </div>
-        </ul> -->
-<!-- Shopping Bag View on Load -->
-
-<!-- <span class="fa fa-shopping-bag fa-3x dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-        <p id="count" class="text">{{ cart.count }}</p>
-    </span>   -->
-<!--</ul>-->
