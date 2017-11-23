@@ -25,7 +25,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 
 // adding routes
 const routes: Routes = [
-  {path:'', component: HomeComponent},
+  { path: '', component: HomeComponent },
   // { path: '', redirectTo: 'app', pathMatch: 'full' },
   // { path: 'app', component: AppComponent},//, canActivate:[AuthGuard]
   { path: 'register', component: RegisterComponent },

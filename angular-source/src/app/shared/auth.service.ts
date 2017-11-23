@@ -8,12 +8,12 @@ export class AuthService {
 
   authToken: any;
   user: any;
-  isDev: boolean;
+  //isDev: boolean;
 
   constructor(
     private http: Http
   ) {
-    this.isDev = true; // Change to false before deployment
+     //this.isDev = true; // Change to false before deployment
   }
 
   //subscribe to observable
@@ -21,9 +21,9 @@ export class AuthService {
     console.log("register user" + user);
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');// add value to the header
-    let ep = this.prepEndpoint('users/register');
-    //return this.http.post('http://localhost:3000/users/register', user, { headers: headers })
-    return this.http.post(ep, user, { headers: headers })
+  //  let ep = this.prepEndpoint('/register');
+   return this.http.post( 'http://localhost:3055/users/register', user, { headers: headers })
+  //  return this.http.post(ep, user, { headers: headers })
       .map(res => res.json());
   }
 
@@ -32,21 +32,21 @@ export class AuthService {
     // let headers = new Headers({ 'Content-Type': 'application/json' });
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    let ep = this.prepEndpoint('users/authenticate');
-    // return this.http.post('http://localhost:3000/users/authenticate', user.email, { headers: headers })
-    return this.http.post(ep, user, { headers: headers })
+   // let ep = this.prepEndpoint('/authenticate');
+    return this.http.post('http://localhost:3055/users/authenticate', user.email, { headers: headers })
+   // return this.http.post(ep, user, { headers: headers })
       .map(res => res.json().data);
   }
 
   // this is not working yet!
   getProfile() {
-    let headers = new Headers();
-    this.loadToken();
-    headers.append('Authorization', this.authToken);
-    headers.append('Content-Type', 'application/json');
-    let ep = this.prepEndpoint('users/profile');
-    return this.http.get(ep, { headers: headers })
-      .map(res => res.json());
+    // let headers = new Headers();
+    // this.loadToken();
+    // headers.append('Authorization', this.authToken);
+    // headers.append('Content-Type', 'application/json');
+    // let ep = this.prepEndpoint('users/profile');
+    // return this.http.get(ep, { headers: headers })
+    //   .map(res => res.json());
   }
 
   storeUserData(token, user) {
@@ -70,12 +70,13 @@ export class AuthService {
     this.user = null;
     localStorage.clear();
   }
-  prepEndpoint(ep) {
-    if (this.isDev) {
-      return ep;
-    } else {
-      return 'http://localhost:8080/' + ep;//what shoud i put here ?
-    }
-  }
+
+  // prepEndpoint(ep) {
+  //   if (this.isDev) {
+  //     return ep;
+  //   } else {
+  //     return 'http://localhost:3055' + ep;
+  //   }
+  // }
 
 }

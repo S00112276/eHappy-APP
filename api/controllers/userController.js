@@ -65,4 +65,5 @@ exports.AuthenticateUser = function(req, res, next) {
 // Profile
 exports.GetProfile = passport.authenticate('jwt', {session:false}), (req, res, next) => {
     res.json({ user: req.user });
+    // res.send(req.user.profile);
 };
