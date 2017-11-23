@@ -22,6 +22,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { CartPgComponent } from './cart-pg/cart-pg.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 // adding routes
 const routes: Routes = [
@@ -32,6 +34,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },// canActivate:[AuthGuard]
   { path: 'products', component: ProductListComponent },
   //   { path: 'product/:id', component: ProductDetailComponent }
+  { path: 'cart', component: CartPgComponent },
+  { path: 'checkout', component: CheckoutComponent }
 ];
 
 @NgModule({
@@ -43,7 +47,9 @@ const routes: Routes = [
     ProfileComponent,
     LoginComponent,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    CartPgComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
