@@ -1,13 +1,3 @@
-.login, .cart{
-    padding: 20px;
-    min-width: 300px;
-}
-
-.signIn {
-    float: right;
-    margin-top: -5px;
-}
-
-.inline, .signIn {
-    display: inline;
+.fixed {
+    margin-top: 70px;
 }
