@@ -2,75 +2,12 @@
 <app-navigation></app-navigation>
 <!-- Navigation -->
 
-<!-- Nav -->
-<div class="row borders">
-  <nav class="navbar navbar-default navbar-inverse collapse navbar-collapse" role="navigation">
-    <div class="container-fluid">
-
-      <!-- Navigation -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-        <ul class="nav navbar-nav">
-
-          <!-- Search -->
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" name="search" [(ngModel)]="search" class="form-control" placeholder="I am searching for...">
-            </div>
-          </form>
-          <!-- Search End -->
-
-          <!-- Department -->
-          <li>
-            <a role="button" (click)="filterDepartment('All')">All</a>
-          </li>
-          <li>
-            <a role="button" (click)="filterDepartment('Mens')">Mens</a>
-          </li>
-          <li>
-            <a role="button" (click)="filterDepartment('Womens')">Womens</a>
-          </li>
-          <li>
-            <a role="button" (click)="filterDepartment('Kids')">Kids</a>
-          </li>
-          <!-- Department End -->
-
-          <!-- Sort By -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort By
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li>
-                <a role="button" (click)="performSort('Popularity')">Popularity</a>
-              </li>
-              <li>
-                <a role="button" (click)="performSort('Price - Low to High')">Price - Low to High</a>
-              </li>
-              <li>
-                <a role="button" (click)="performSort('Price - High to Low')">Price - High to Low</a>
-              </li>
-              <li>
-                <a role="button" (click)="performSort('Rating')">Rating</a>
-              </li>
-            </ul>
-          </li>
-          <!-- Sort By End -->
-
-        </ul>
-      </div>
-      <!-- Navigation End -->
-
-    </div>
-  </nav>
-</div>
-<!-- Nav -->
-
-<!-- Refine -->
+<!-- Mobile Filter -->
 <button class="btn btn-dark visible-xs-block refineBy" data-toggle="modal" data-target="#exampleModalLong" title="Refine by">
   <i class="fa fa-cog fa-3x"></i>
 </button>
-<!-- Modal -->
-<div class="modal fade refine" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade refine" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -105,73 +42,197 @@
     </div>
   </div>
 </div>
-<!-- Refine -->
+<!-- Mobile Filter End -->
 
-<!-- Products -->
+
 <div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-8 container-fluid">
+
+  <!-- Filter -->
+  <div class="col-md-2">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav">
+        <section>
+          <div class="todo-list">
+
+            <!-- Search -->
+            <div class="form-group">
+              <input type="text" name="search" [(ngModel)]="search" class="form-control" placeholder="I am searching for...">
+            </div>
+            <!-- Search End -->
+
+            <!-- Sort By -->
+            <div class="dropdown todo">
+              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">Sort By
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a role="button" (click)="performSort('Popularity')">Popularity</a>
+                </li>
+                <li>
+                  <a role="button" (click)="performSort('Price - Low to High')">Price - Low to High</a>
+                </li>
+                <li>
+                  <a role="button" (click)="performSort('Price - High to Low')">Price - High to Low</a>
+                </li>
+                <li>
+                  <a role="button" (click)="performSort('Rating')">Rating</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Refine -->
+            <section>
+              <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
+                <defs>
+                  <linearGradient id="boxGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="25" y2="25">
+                    <stop offset="0%" stop-color="#27FDC7" />
+                    <stop offset="100%" stop-color="#0FC0F5" />
+                  </linearGradient>
+
+                  <linearGradient id="lineGradient">
+                    <stop offset="0%" stop-color="#0FC0F5" />
+                    <stop offset="100%" stop-color="#27FDC7" />
+                  </linearGradient>
+
+                  <path id="todo__box" stroke="url(#boxGradient)" d="M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4"></path>
+                  <path id="todo__check" stroke="url(#boxGradient)" d="M10 13l2 2 5-5"></path>
+                  <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>
+                </defs>
+              </svg>
+
+
+              <label class="todo">
+                <input class="todo__state" type="checkbox" (change)="mens = !mens" />
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
+                  <use xlink:href="#todo__box" class="todo__box"></use>
+                  <use xlink:href="#todo__check" class="todo__check"></use>
+                  <use xlink:href="#todo__circle" class="todo__circle"></use>
+                </svg>
+                <div class="todo__text">Mens</div>
+              </label>
+
+              <label class="todo">
+                <input class="todo__state" type="checkbox" (change)="womens = !womens" />
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
+                  <use xlink:href="#todo__box" class="todo__box"></use>
+                  <use xlink:href="#todo__check" class="todo__check"></use>
+                  <use xlink:href="#todo__circle" class="todo__circle"></use>
+                </svg>
+                <div class="todo__text">Womens</div>
+              </label>
+
+              <label class="todo">
+                <input class="todo__state" type="checkbox" (change)="kids = !kids" />
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
+                  <use xlink:href="#todo__box" class="todo__box"></use>
+                  <use xlink:href="#todo__check" class="todo__check"></use>
+                  <use xlink:href="#todo__circle" class="todo__circle"></use>
+                </svg>
+                <div class="todo__text">Kids</div>
+              </label>
+
+              <label class="todo">
+                <input class="todo__state" type="checkbox" (change)="jumpers = !jumpers" />
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
+                  <use xlink:href="#todo__box" class="todo__box"></use>
+                  <use xlink:href="#todo__check" class="todo__check"></use>
+                  <use xlink:href="#todo__circle" class="todo__circle"></use>
+                </svg>
+                <div class="todo__text">Jumpers</div>
+              </label>
+
+              <label class="todo">
+                <input class="todo__state" type="checkbox" (change)="skirts = !skirts" />
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
+                  <use xlink:href="#todo__box" class="todo__box"></use>
+                  <use xlink:href="#todo__check" class="todo__check"></use>
+                  <use xlink:href="#todo__circle" class="todo__circle"></use>
+                </svg>
+                <div class="todo__text">Skirts</div>
+              </label>
+            </section>
+            <!-- Refine End -->
+
+
+          </div>
+        </section>
+      </ul>
+    </div>
+  </div>
+  <!-- Filter End -->
+
+
+  <!-- Products -->
+  <div class="col-md-10 container-fluid">
     <div class="card-group">
       <div *ngIf="products && filteredProducts.length"></div>
-      <div class="col-md-4 container-fluid" *ngFor="let product of filteredProducts">
+      <div class="col-sm-6 col-md-4 col-lg-3 container-fluid" *ngFor="let product of filteredProducts">
         <div class="card-group">
 
           <!-- Product Card -->
-          <div class="card">
-            <div class="cardImg">
+          <div class="card wrapper">
+            <div class="card-img">
               <img class="img-responsive" src="{{product.images[0]}}" alt="Card image cap">
             </div>
 
             <!-- Details -->
-            <div class="card-block">
-              <h4 class="card-title title">{{product.name}}</h4>
-              <p class="card-text price"> {{product.price}}</p>
-
-              <!-- Sizes -->
-              <div class="card-block">
-                <div class="card-block-title">size</div>
-                <div class="options">
-                  <a class="option" href="#">6</a>
-                  <a class="option" href="#">7</a>
-                  <a class="option" href="#">8</a>
-                  <a class="option" href="#">9</a>
-                  <a class="option" href="#">10</a>
+            <div class="card-block inside">
+              <div class="icon">
+                <i class="fa fa-info fa-2x"></i>
+              </div>
+              <div class="contents">
+                <!-- Sizes -->
+                <div class="card-block">
+                  <div class="card-block-title">size</div>
+                  <div class="options">
+                    <a class="option" href="#">6</a>
+                    <a class="option" href="#">7</a>
+                    <a class="option" href="#">8</a>
+                    <a class="option" href="#">9</a>
+                    <a class="option" href="#">10</a>
+                  </div>
                 </div>
-              </div>
-              <!-- Sizes End -->
+                <!-- Sizes End -->
 
-              <!-- Colours -->
-              <div class="card-block">
-                <div class="card-block-title">colors</div>
-                <div class="color-options">
-                  <input class="orange" type="radio" name="color">
-                  <input class="green" type="radio" name="color">
-                  <input class="yellow" type="radio" name="color">
-                  <input class="blue" type="radio" name="color">
+                <!-- Colours -->
+                <div class="card-block">
+                  <div class="card-block-title">colors</div>
+                  <div class="color-options">
+                    <input class="orange" type="radio" name="color">
+                    <input class="green" type="radio" name="color">
+                    <input class="yellow" type="radio" name="color">
+                    <input class="blue" type="radio" name="color">
+                  </div>
                 </div>
-              </div>
-              <!-- Colours End -->
+                <!-- Colours End -->
 
-              <!-- Stock -->
-              <div class="card-block">
-                <span *ngIf="product.stock > 15 " class="available">Available</span>
-                <span *ngIf="product.stock == 0 " class="stock">Out of Stock</span>
-                <span *ngIf="product.stock <= 15 && product.stock != 0" class="stock">Hurry only {{product.stock}} left!</span>
-                <button type="button" *ngIf="product.stock > 0" class="btn btn-primary addToCart" (click)="addToCart(product)">Add to Cart</button>
-                <button type="button" *ngIf="product.stock == 0" class="btn btn-primary addToCart" disabled="true">Add to Cart</button>
+                <!-- Stock -->
+                <div class="card-block">
+                  <span *ngIf="product.stock > 15 " class="available">Available</span>
+                  <span *ngIf="product.stock == 0 " class="stock">Out of Stock</span>
+                  <span *ngIf="product.stock <= 15 && product.stock != 0" class="stock">Hurry only {{product.stock}} left!</span>
+                </div>
+                <!-- Stock End -->
               </div>
-              <!-- Stock End  -->
-
             </div>
-            <!-- Details -->
 
+            <div class="bottom">
+              <div class="left">
+                <h2 class="card-name">{{product.name}}</h2>
+                <h3 class="card-price">€{{product.price}}</h3>
+                <button type="button" *ngIf="product.stock > 0" class="btn btn-primary cart-button" (click)="addToCart(product)">
+                  <i class="fa fa-shopping-cart fa-2x"></i>
+                </button>
+                <button type="button" *ngIf="product.stock == 0" class="btn btn-primary cart-button" disabled="true">
+                  <i class="fa fa-shopping-cart fa-2x"></i>
+                </button>
+              </div>
+            </div>
           </div>
-          <!-- Product Card -->
-
         </div>
       </div>
     </div>
   </div>
-  <div class="col-md-2"></div>
 </div>
-<!-- Products End -->
+<!-- Product End -->

@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 var ProductSchema = new Schema({
     _id: {
-        type: Number,
+        type: String,
         Required: [true]
     },
     name: {

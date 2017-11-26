@@ -1,14 +1,12 @@
 import { ProductService } from '../shared/product.service';
 import { IProduct } from './product'
 import { Component, OnInit } from '@angular/core';
-
 import { Cart, CartItem, CartService } from '../shared/cart.service';
-
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.less']
 })
 export class ProductListComponent implements OnInit {
   products: IProduct[];
@@ -54,17 +52,6 @@ export class ProductListComponent implements OnInit {
   }
   //#endregion
 
-  //#region Department
-  filterDepartment(department: string) {
-    if (department == 'All')
-      this.filteredProducts = this.products;
-    else {
-      department = department.toLocaleLowerCase();
-      this.filteredProducts = this.products.filter((product: IProduct) => product.department.toLocaleLowerCase() == department);
-    }
-  }
-  //#endregion
-
   //#region Sort
   performSort(sortBy: string) {
     if (sortBy == 'Popularity')
@@ -100,10 +87,83 @@ export class ProductListComponent implements OnInit {
     else if (p1.price < p2.price) return 0
     else return -1
   }
-  //#endregion
+  //#endregion  
 
-  //#region Filter
-  performFilter(sortBy: string) {
+  //#region Category
+    // Mens
+  _mens: boolean = false;
+  get mens(): boolean {
+    return this._mens;
+  }
+
+  set mens(value: boolean) {
+    this._mens = value;
+    this.refine();
+  }
+
+  // Womens
+  _womens: boolean = false;
+  get womens(): boolean {
+    return this._womens;
+  }
+
+  set womens(value: boolean) {
+    this._womens = value;
+    this.refine();
+  }
+
+  // Kids
+  _kids: boolean = false;
+  get kids(): boolean {
+    return this._kids;
+  }
+
+  set kids(value: boolean) {
+    this._kids = value;
+    this.refine();
+  }
+
+  // Jumper
+  _jumpers: boolean = false;
+  get jumpers(): boolean {
+    return this._jumpers;
+  }
+
+  set jumpers(value: boolean) {
+    this._jumpers = value;
+    this.refine();
+  }
+
+  // Kids
+  _skirts: boolean = false;
+  get skirts(): boolean {
+    return this._skirts;
+  }
+
+  set skirts(value: boolean) {
+    this._skirts = value;
+    this.refine();
+  }
+
+  refine(): void {
+    this.filteredProducts = [];
+    this.products.forEach(product => {
+      if (this._mens == true && product.department == "mens") {
+        this.filteredProducts.push(product);
+      }
+      else if (this._womens == true && product.department == "womens") {
+        this.filteredProducts.push(product);
+      }
+      else if (this._kids == true && product.department == "kids") {
+        this.filteredProducts.push(product);
+      }
+      else if (this._jumpers == true && product.category == "jumper") {
+        this.filteredProducts.push(product);
+      }
+      else if (this._skirts == true && product.category == "skirt") {
+        this.filteredProducts.push(product);
+      }
+    });
   }
   //#endregion
 }
