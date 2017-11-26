@@ -10,9 +10,9 @@ const config = require('../../config/database');
 
 // Transaction Schema
 const TransactionSchema = new Schema({
-    user_id: {
+    userName: {
         type: String,
-        required: 'Enter user_id'
+        required: 'Enter Usename'
     },
     time: {
         type: Date,
@@ -20,12 +20,12 @@ const TransactionSchema = new Schema({
     },
     total: {
         type: Number,
-        required: 'Enter total amount'
+        required: 'Enter Total Amount'
     },
     products: [{
         id: {
             type: [Schema.Types.ObjectId],
-            required: 'Enter the products'
+            required: 'Enter the Products'
         },
         price: {
             type: Number,

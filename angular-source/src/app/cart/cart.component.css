@@ -26,3 +26,16 @@
     color: #9d9d9d;
     padding-top: 3px;
 }
+
+.btnblack {
+    background-color: black;
+}
+
+.btnblack:hover {
+    background-color: grey;
+}
+
+.btn-inverse:hover {
+    background-color: whitesmoke;
+    color: grey;
+}

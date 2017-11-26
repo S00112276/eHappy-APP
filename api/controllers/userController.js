@@ -8,6 +8,11 @@ const router = express.Router();
 //var isPlainObject = require('lodash.isplainobject');
 
 const User = require('../models/userModel');
+const Cart = require('../../angular-source/src/app/shared/cart.service');
+
+/* exports.addToCart = function(req, res, next) {
+    Cart.CartService().addToCart();
+} */
 
 exports.registerUser = function(req, res, next) {
     let newUser = new User({
