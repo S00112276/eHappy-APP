@@ -28,13 +28,16 @@ export class AuthService {
 
   authUser(user) {
     console.log("auth user" + user);
+    console.log("auth data" + user.data);
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    let ep = this.prepEndpoint('/users/authenticate');
+    let ep = this.prepEndpoint('users/authenticate');
     // return this.http.post('http://localhost:3055/users/authenticate', user, { headers: headers })
     return this.http.post(ep, user, { headers: headers })
-      .map(res => res.json().data);
+      .map(res => res.json()); //.data
+      
   }
+  
 
   // this is not working yet!
   getProfile() {

@@ -45,11 +45,12 @@ router.post('/authenticate', (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    User.getUserByUsername(email, (err, user) => {
+    User.getUserByEmail(email, (err, user) => {
         if (err) throw err;
         if (!user) {
             return res.json({ success: false, msg: 'User not found' })
         }
+
         User.comparePassword(password, user.password, (err, isMatch) => {
             if (err) throw err;
             if (isMatch) {
@@ -65,6 +66,7 @@ router.post('/authenticate', (req, res, next) => {
                         name: user.name,
                         username: user.username,
                         email: user.email
+                        //here should i have also password?
                     }
                 });
             }
@@ -76,8 +78,8 @@ router.post('/authenticate', (req, res, next) => {
 });
 
 //profile
-router.get('/profile', passport.authenticate('jwt', {session:false}),(req, res, next) => {
-    res.send({user:req.user});
+router.get('/profile', passport.authenticate('jwt', { session: false }), (req, res, next) => {
+    res.send({ user: req.user });
 });
 
 module.exports = router;
