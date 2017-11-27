@@ -1,3 +1,9 @@
 .fixed {
     margin-top: 70px;
 }
+
+.top {
+    z-index: 500;
+    position: absolute;
+    right: 10px;
+}

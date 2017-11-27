@@ -45,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // BodyParser Middleware
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 
 // Passport Middleware
 app.use(passport.initialize());
