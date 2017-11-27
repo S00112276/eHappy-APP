@@ -25,7 +25,7 @@ exports.create_a_product = function (req, res) {
 
 // Returns a product based on _id
 exports.read_a_product = function (req, res) {
-    ProductModel.findOne(req.params._id, function (err, product) {
+    ProductModel.find({_id: req.params.productId}, function (err, product) {
         if (err)
             res.send(err);
         res.json(product);
