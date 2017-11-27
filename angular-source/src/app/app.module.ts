@@ -33,8 +33,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },// canActivate:[AuthGuard]
   { path: 'products', component: ProductListComponent },
-  //   { path: 'product/:id', component: ProductDetailComponent }
+  //   { path: 'product/:id', component: ProductDetailComponent },
   { path: 'cart', component: CartPgComponent },
+  { path: 'cart-pg', component: CartPgComponent },
   { path: 'checkout', component: CheckoutComponent }
 ];
 

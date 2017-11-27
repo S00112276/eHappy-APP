@@ -163,6 +163,9 @@ export class ProductListComponent implements OnInit {
       else if (this._skirts == true && product.category == "skirt") {
         this.filteredProducts.push(product);
       }
+      else if (this.filteredProducts == []) {
+        this.filteredProducts == this.products;
+      }
     });
   }
   //#endregion

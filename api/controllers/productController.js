@@ -1,11 +1,12 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const Product = mongoose.model('Products');
+const ProductModel = mongoose.model('Products');
+//const ProductModel= require('../models/productModel');
 
 // Returns all products 
 exports.list_all_products = function (req, res) {
-    Product.find({}, function (err, product) {
+    ProductModel.find({}, function (err, product) {
         if (err)
             res.send(err);
         res.json(product);
@@ -14,7 +15,7 @@ exports.list_all_products = function (req, res) {
 
 // Creates a product
 exports.create_a_product = function (req, res) {
-    var new_product = new Product(req.body);
+    var new_product = new ProductModel(req.body);
     new_product.save({}, function (err, product) {
         if (err)
             res.send(err);
@@ -24,7 +25,7 @@ exports.create_a_product = function (req, res) {
 
 // Returns a product based on _id
 exports.read_a_product = function (req, res) {
-    Product.findById(req.params.productId, function (err, product) {
+    ProductModel.findOne(req.params._id, function (err, product) {
         if (err)
             res.send(err);
         res.json(product);
@@ -33,7 +34,7 @@ exports.read_a_product = function (req, res) {
 
 // Updates an existing product based on _id
 exports.update_a_product = function (req, res) {
-    Product.findOneAndUpdate({ _id: req.params.productId }, req.body,
+    ProductModel.findOneAndUpdate(req.params.productId, req.body,
         { new: true }, function (err, product) {
             if (err)
                 res.send(err);
@@ -43,7 +44,7 @@ exports.update_a_product = function (req, res) {
 
 // Delete a product based on _id
 exports.delete_a_product = function (req, res) {
-    Product.findOneAndRemove({productId:req.params.productId},
+    ProductModel.findOneAndRemove(req.params.productId,
          function (err, product) {
         if (err)
             res.send(err);
