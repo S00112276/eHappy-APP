@@ -10,34 +10,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" role="button" [routerLink]="['']">Angular Store</a>
         </div>
         <!-- Mobile Display End -->
 
-<!-- <div id="navbar" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav navbar-left">
-        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['/']">Home</a>
-        </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['/dashboard']">Dashboard</a>
-        </li>
-        <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['/profile']">Profile</a>
-        </li> 
-        <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['/login']">Login</a>
-        </li> 
-         <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['/register']">Register</a>
-        </li> 
-        <li *ngIf="authService.loggedIn()">
-            <a (click)="onLogoutClick()" href="#">Logout</a>
-        </li>
-    </ul>
-</div> -->
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="navbar-brand" role="button" [routerLink]="['']">Angular Store</a>
+                </li>
+            </ul>
+        </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -50,23 +32,38 @@
                 </li>
                 <!-- Login End -->
 
+                <!-- <ul class="nav navbar-nav navbar-right">
+                 <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['/dashboard']">Dashboard</a>
+                </li> 
+                <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['/profile']">Profile</a>
+                </li> 
+                <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['/login']">Login</a>
+                </li> 
+                  <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['/register']">Register</a>
+                </li>  
+                <li *ngIf="authService.loggedIn()">
+                    <a (click)="onLogoutClick()" href="#">Logout</a>
+                </li>
+            </ul> -->
+
 
                 <!-- Pages -->
                 <li>
                     <a role="button" [routerLink]="['/products']">Products</a>
                 </li>
                 <!-- Pages End -->
-
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-
                 <!-- Cart -->
                 <ul>
-                        <app-cart></app-cart>
+                    <app-cart></app-cart>
                 </ul>
                 <!-- Cart End -->
-
             </ul>
         </div>
     </div>
