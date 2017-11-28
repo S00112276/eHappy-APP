@@ -12,6 +12,7 @@ const config = require('./config/database');
 
 // Routes
 const productRoutes = require('./api/routes/productRoutes');
+const userRoutes = require('./api/routes/userRoutes');
 const transactionRoutes = require('./api/routes/transactionRoutes');
 
 // Models
