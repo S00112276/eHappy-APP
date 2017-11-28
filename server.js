@@ -1,26 +1,22 @@
 const passport = require('passport');
 const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const app = express();
 const path = require('path');
-
 // Set port on 3055
 const port = process.env.PORT || 3055;
-
-//database
+// Database
 const config = require('./config/database');
 
-//routes
+// Routes
 const productRoutes = require('./api/routes/productRoutes');
 const transactionRoutes = require('./api/routes/transactionRoutes');
 
-//models
+// Models
 const productModel = require('./api/models/productModel');
 const transactionModel = require('./api/models/transactionModel');
-
-const users=require('./api/routes/userRoutes');
 
 // Connect to db
 mongoose.connect(config.database);//
@@ -48,9 +44,9 @@ app.use(bodyParser.json());
 // Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use('/users', users);
 require('./config/passport')(passport);
+
+app.use('/users', userRoutes);
 
 transactionRoutes(app);
 productRoutes(app);

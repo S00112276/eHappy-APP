@@ -23,7 +23,7 @@ exports.create_a_product = function (req, res) {
     });
 };
 
-// Returns a product based on _id
+// Returns a product based on productId
 exports.read_a_product = function (req, res) {
     ProductModel.find({_id: req.params.productId}, function (err, product) {
         if (err)
@@ -32,9 +32,9 @@ exports.read_a_product = function (req, res) {
     });
 };
 
-// Updates an existing product based on _id
+// Updates an existing product based on productId
 exports.update_a_product = function (req, res) {
-    ProductModel.findOneAndUpdate(req.params.productId, req.body,
+    ProductModel.findOneAndUpdate({_id: req.params.productId}, req.body,
         { new: true }, function (err, product) {
             if (err)
                 res.send(err);
@@ -42,9 +42,9 @@ exports.update_a_product = function (req, res) {
         });
 };
 
-// Delete a product based on _id
+// Delete a product based on productId
 exports.delete_a_product = function (req, res) {
-    ProductModel.findOneAndRemove(req.params.productId,
+    ProductModel.findOneAndRemove({_id: req.params.productId},
          function (err, product) {
         if (err)
             res.send(err);
