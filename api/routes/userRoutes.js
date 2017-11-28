@@ -1,24 +1,8 @@
-// 'use strict';
-
-// module.exports = function(app) {
-//     var users = require('../controllers/userController');
-
-// app.post('/register')
-//     .post(users.registerUser);
-
-// app.route('/authenticate')
-//     .post(users.AuthenticateUser);
-
-// app.route('/profile')
-//     .get(users.GetProfile);
-// }
-//===========================second variante
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/database');
-//var isPlainObject = require('lodash');
 const User = require('../models/userModel');
 
 //register
@@ -42,6 +26,7 @@ router.post('/register', (req, res, next) => {
 
 //auth
 router.post('/authenticate', (req, res, next) => {
+    // user auth by email 
     const email = req.body.email;
     const password = req.body.password;
 
@@ -56,7 +41,6 @@ router.post('/authenticate', (req, res, next) => {
             if (isMatch) {
                 const token = jwt.sign({ data: user }, config.secret, {
                     expiresIn: 86400 // 1 day in seconds
-
                 });
                 res.json({
                     success: true,
@@ -66,7 +50,6 @@ router.post('/authenticate', (req, res, next) => {
                         name: user.name,
                         username: user.username,
                         email: user.email
-                        //here should i have also password?
                     }
                 });
             }

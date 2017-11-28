@@ -14,18 +14,16 @@ const config = require('./config/database');
 
 //routes
 const productRoutes = require('./api/routes/productRoutes');
-//const userRoutes = require('./api/routes/userRoutes');
 const transactionRoutes = require('./api/routes/transactionRoutes');
 
 //models
 const productModel = require('./api/models/productModel');
-//const userModel = require('./api/models/userModel');
 const transactionModel = require('./api/models/transactionModel');
 
 const users=require('./api/routes/userRoutes');
 
 // Connect to db
-mongoose.connect(config.database);//, { useMongoClient: true }
+mongoose.connect(config.database);//
 
 // On error
 mongoose.connection.on('error', (err) => {
@@ -55,7 +53,6 @@ app.use('/users', users);
 require('./config/passport')(passport);
 
 transactionRoutes(app);
-//userRoutes(app);
 productRoutes(app);
 
 app.use(function (req, res) {
