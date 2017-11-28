@@ -1,5 +1,5 @@
 <span class="fa fa-user fa-3x dropdown-toggle white" data-toggle="dropdown" role="button"></span>
-<form (submit)='onLoginSubmit()' class="dropdown-menu p-4 login">  <!-- ngSubmit  -->
+<form (submit)='onLoginSubmit()' class="dropdown-menu p-4 login">
     <div class="form-group">
         <label>Email address</label>
         <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="email@example.com">
@@ -24,38 +24,9 @@
         </h5>
     </div>
 </form>
-
-<!-- <div id="navbar" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav navbar-left">
-        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['/']">Home</a>
-        </li>
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['/dashboard']">Dashboard</a>
-        </li>
-        <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['/profile']">Profile</a>
-        </li> -->
-        <!-- <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['/login']">Login</a>
-        </li> -->
-        <!-- <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['/register']">Register</a>
-        </li> 
-        <li *ngIf="authService.loggedIn()">
-            <a (click)="onLogoutClick()" href="#">Logout</a>
-        </li>
-    </ul>
-</div> -->
-<!--/.nav-collapse -->
-
-
 <!-- Login End-->
-<!-- <div class="logout">
-        <li [routerLinkActive]="['inactive']">
-            <a (click)="onLogoutClick()" href="#">Logout</a>
-        </li>
-    </div> -->
+<div class="logout">
+    <li [routerLinkActive]="['inactive']">
+        <a (click)="onLogoutClick()" href="#">Logout</a>
+    </li>
+</div>

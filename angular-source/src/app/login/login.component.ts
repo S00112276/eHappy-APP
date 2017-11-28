@@ -51,13 +51,13 @@ export class LoginComponent implements OnInit {
 
   }
   // for navbar logout
-  // onLogoutClick() {
-  //   this.authService.logout();
-  //   this.flashMessage.show('You are logged out!', {
-  //     cssClass: 'alert-succes',
-  //     timeout: 3000
-  //   });
-  //   this.router.navigate(['/dashboard']);
-  //   return false;
-  // }
+  onLogoutClick() {
+    this.authService.logout();
+    this.flashMessage.show('You are logged out!', {
+      cssClass: 'alert-succes',
+      timeout: 3000
+    });
+    this.router.navigate(['']);
+    return false;
+  }
 }

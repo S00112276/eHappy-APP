@@ -20,34 +20,31 @@ export class AuthService {
   registerUser(user) {
     console.log("register user" + user);
     let headers = new Headers();
-    headers.append('Content-Type', 'application/json');// add value to the header
+    headers.append('Content-Type', 'application/json');
     let ep = this.prepEndpoint('users/register');
     return this.http.post(ep, user, { headers: headers })
       .map(res => res.json());
   }
 
   authUser(user) {
-    console.log("auth user" + user);
-    console.log("auth data" + user.data);
+    // console.log("auth user" + user);
+    // console.log("auth data" + user.data);
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     let ep = this.prepEndpoint('users/authenticate');
-    // return this.http.post('http://localhost:3055/users/authenticate', user, { headers: headers })
     return this.http.post(ep, user, { headers: headers })
-      .map(res => res.json()); //.data
+      .map(res => res.json()); 
       
   }
   
-
-  // this is not working yet!
   getProfile() {
-    // let headers = new Headers();
-    // this.loadToken();
-    // headers.append('Authorization', this.authToken);
-    // headers.append('Content-Type', 'application/json');
-    // let ep = this.prepEndpoint('users/profile');
-    // return this.http.get(ep, { headers: headers })
-    //   .map(res => res.json());
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    let ep = this.prepEndpoint('users/profile');
+    return this.http.get(ep, { headers: headers })
+      .map(res => res.json());
   }
 
   storeUserData(token, user) {
