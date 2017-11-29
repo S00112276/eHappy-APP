@@ -23,10 +23,10 @@
             </a>
         </h5>
     </div>
+    <!-- Login End-->
+    <div class="logout">
+        <li [routerLinkActive]="['inactive']">
+            <a (click)="onLogoutClick()" href="#">Logout</a>
+        </li>
+    </div>
 </form>
-<!-- Login End-->
-<div class="logout">
-    <li [routerLinkActive]="['inactive']">
-        <a (click)="onLogoutClick()" href="#">Logout</a>
-    </li>
-</div>
