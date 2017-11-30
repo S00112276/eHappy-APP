@@ -32,11 +32,7 @@ var ProductSchema = new Schema({
         type: Number,
         Required: [true]   
     },
-    sizes: {
-        type: [Number],
-        Required: [true]
-    },
-    colors: {
+    reviews: {
         type: [String],
         Required: [true]
     },
@@ -44,8 +40,8 @@ var ProductSchema = new Schema({
         type: [String],
         Required: [true]
     },
-    reviews: {
-        type: [String],
+    sizes: {
+        type: [Number],
         Required: [true]
     }
 });

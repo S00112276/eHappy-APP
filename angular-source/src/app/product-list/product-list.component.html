@@ -91,7 +91,7 @@
 <div class="row body">
 
   <!-- Filter -->
-  <div class="col-md-2">
+  <div class="col-md-2 refine">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav">
         <section>
@@ -204,58 +204,60 @@
 
   <!-- Products -->
   <div class="col-md-10 container-fluid">
-      <div *ngIf="products && filteredProducts.length"></div>
-      <div class="col-sm-6 col-md-4 col-lg-3 container-fluid" *ngFor="let product of filteredProducts">
+    <div *ngIf="products && filteredProducts.length"></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 container-fluid" *ngFor="let product of filteredProducts">
 
-          <!-- Product Card -->
-          <div class="card wrapper">
-            <div class="card-img">
-              <img class="img-responsive" src="{{product.images[0]}}" alt="Card image cap">
-            </div>
+      <!-- Product Card -->
+      <div class="card wrapper">
+        <div>
+          <img class="img-responsive" src="{{product.images[0]}}" alt="Card image cap">
+        </div>
 
-            <div class="inside">
-              <div class="icon">
-                <i class="fa fa-info fa-2x"></i>
-              </div>
-              <div class="contents">
-
-                <!-- Sizes -->
-                <h3>size</h3>
-                <div class="options">
-                  <a class="option" href="#">6</a>
-                  <a class="option" href="#">7</a>
-                  <a class="option" href="#">8</a>
-                  <a class="option" href="#">9</a>
-                  <a class="option" href="#">10</a>
-                </div>
-                <!-- Sizes End -->
-
-              </div>
-            </div>
-
-            <div>
-              <div class="left">
-                <h2 class="card-name">{{product.name}}</h2>
-                <h3 class="card-price">€{{product.price}}</h3>
-
-                <!-- Stock -->
-                <div class="card-stock">
-                  <span *ngIf="product.stock > 15 " class="available">Available</span>
-                  <span *ngIf="product.stock == 0 " class="out-of-stock">Out of Stock</span>
-                  <span *ngIf="product.stock <= 15 && product.stock != 0" class="out-of-stock">Hurry only {{product.stock}} left!</span>
-                </div>
-                <!-- Stock End -->
-
-                <button type="button" *ngIf="product.stock > 0" class="btn btn-primary cart-button" (click)="addToCart(product)">
-                  <i class="fa fa-shopping-cart fa-2x"></i>
-                </button>
-                <button type="button" *ngIf="product.stock == 0" class="btn btn-primary cart-button" disabled="true">
-                  <i class="fa fa-shopping-cart fa-2x"></i>
-                </button>
-              </div>
-            </div>
+        <div class="inside">
+          <div class="icon">
+            <i class="fa fa-info fa-2x"></i>
           </div>
+          <div class="contents">
+
+            <!-- Description -->
+            <p>{{product.desc}}</p>
+            <!-- Description End -->
+
+            <!-- Sizes -->
+            <h3>size</h3>
+            <div class="options">
+              <a class="option" href="#">6</a>
+              <a class="option" href="#">7</a>
+              <a class="option" href="#">8</a>
+              <a class="option" href="#">9</a>
+              <a class="option" href="#">10</a>
+            </div>
+            <!-- Sizes End -->
+
+          </div>
+        </div>
+
+        <div class="left">
+          <h2 class="card-name">{{product.name}}</h2>
+          <h3 class="card-price">€{{product.price}}</h3>
+
+          <!-- Stock -->
+          <div class="card-stock">
+            <span *ngIf="product.stock > 15 " class="available">Available</span>
+            <span *ngIf="product.stock == 0 " class="out-of-stock">Out of Stock</span>
+            <span *ngIf="product.stock <= 15 && product.stock != 0" class="out-of-stock">Hurry only {{product.stock}} left!</span>
+          </div>
+          <!-- Stock End -->
+
+          <button type="button" *ngIf="product.stock > 0" class="btn btn-primary cart-button" (click)="addToCart(product)">
+            <i class="fa fa-shopping-cart fa-2x"></i>
+          </button>
+          <button type="button" *ngIf="product.stock == 0" class="btn btn-primary cart-button" disabled="true">
+            <i class="fa fa-shopping-cart fa-2x"></i>
+          </button>
+        </div>
       </div>
+    </div>
   </div>
   <!-- Product End -->
 

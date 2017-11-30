@@ -6,8 +6,7 @@ export interface IProduct {
     department: string;
     price: number;
     stock: number;
-    sizes: [number];
-    colours: [string];
+    reviews: [string];    
     images: [string];
-    reviews: [string];
+    sizes: [number];    
 }
