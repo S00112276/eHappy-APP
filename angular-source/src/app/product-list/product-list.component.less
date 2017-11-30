@@ -46,6 +46,22 @@
   bottom: 0;
 }
 
+.card-stock {
+  position: absolute;
+  right: 30%;
+  bottom: 2.5%;
+  
+  .out-of-stock {
+   color: red;
+   font-size: 14px;
+  }
+
+  .available {
+   color: rgb(34, 190, 34);
+   font-size: 14px;
+  }
+}
+
 .cart-button {
     right: 0;
     bottom: 0;
@@ -70,16 +86,6 @@
   margin-top: 20px;
 }
 
-.stock {
-  color: red;
-  font-size: 12px;
-}
-
-.available {
-  color: rgb(34, 190, 34);
-  font-size: 12px;
-}
-
 .refineBy {
   position: fixed;
   width: 60px;
@@ -96,7 +102,6 @@
   max-width: 15em;
   margin: auto;
   padding: 0.5em 1em;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
 }
 
 .todo {

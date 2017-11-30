@@ -4,14 +4,14 @@
 
 <!-- Mobile Filter -->
 <button class="btn btn-dark visible-xs-block refineBy" data-toggle="modal" data-target="#exampleModalLong" title="Refine by">
-  <i class="fa fa-cog fa-3x"></i>
+  <i class="fa fa-search fa-3x"></i>
 </button>
 <div class="modal fade refine" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Refine By</h5>
+        <h1 class="modal-title" id="exampleModalLongTitle">Refine By</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -19,25 +19,53 @@
       <div class="modal-body">
         <form class="form-inline" role="form">
           <div class="form-group">
-            <select class="form-control">
-              <option>Department</option>
-              <option>Mens</option>
-              <option>Womens</option>
-              <option>Kids</option>
-            </select>
-            <select class="form-control">
-              <option>Sort By</option>
-              <option>Popularity</option>
-              <option>Price - Low to High</option>
-              <option>Price - High to Low</option>
-              <option>Rating</option>
-            </select>
+            <div class="form-group">
+              <input type="text" name="search" [(ngModel)]="search" class="form-control search" placeholder="I am searching for...">
+            </div>
+            <div class="dropdown">
+              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">Sort By
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a role="button" (click)="performSort('Popularity')">Popularity</a>
+                </li>
+                <li>
+                  <a role="button" (click)="performSort('Price - Low to High')">Price - Low to High</a>
+                </li>
+                <li>
+                  <a role="button" (click)="performSort('Price - High to Low')">Price - High to Low</a>
+                </li>
+                <li>
+                  <a role="button" (click)="performSort('Rating')">Rating</a>
+                </li>
+              </ul>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" (change)="mens = !mens">Mens</label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" (change)="womens = !womens">Womens</label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" (change)="kids = !kids">Kids</label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" (change)="jumpers = !jumpers">Jumpers</label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" (change)="skirts = !skirts">Skirts</label>
+            </div>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Refine</button>
       </div>
     </div>
   </div>
@@ -45,7 +73,7 @@
 <!-- Mobile Filter End -->
 
 
-<div class="row">
+<div class="row body">
 
   <!-- Filter -->
   <div class="col-md-2">
@@ -177,6 +205,7 @@
                 <i class="fa fa-info fa-2x"></i>
               </div>
               <div class="contents">
+
                 <!-- Sizes -->
                 <div class="card-block">
                   <div class="card-block-title">size</div>
@@ -189,33 +218,22 @@
                   </div>
                 </div>
                 <!-- Sizes End -->
-
-                <!-- Colours -->
-                <div class="card-block">
-                  <div class="card-block-title">colors</div>
-                  <div class="color-options">
-                    <input class="orange" type="radio" name="color">
-                    <input class="green" type="radio" name="color">
-                    <input class="yellow" type="radio" name="color">
-                    <input class="blue" type="radio" name="color">
-                  </div>
-                </div>
-                <!-- Colours End -->
-
-                <!-- Stock -->
-                <div class="card-block">
-                  <span *ngIf="product.stock > 15 " class="available">Available</span>
-                  <span *ngIf="product.stock == 0 " class="stock">Out of Stock</span>
-                  <span *ngIf="product.stock <= 15 && product.stock != 0" class="stock">Hurry only {{product.stock}} left!</span>
-                </div>
-                <!-- Stock End -->
               </div>
             </div>
 
-            <div class="bottom">
+            <div>
               <div class="left">
                 <h2 class="card-name">{{product.name}}</h2>
                 <h3 class="card-price">€{{product.price}}</h3>
+
+                <!-- Stock -->
+                <div class="card-stock">
+                  <span *ngIf="product.stock > 15 " class="available">Available</span>
+                  <span *ngIf="product.stock == 0 " class="out-of-stock">Out of Stock</span>
+                  <span *ngIf="product.stock <= 15 && product.stock != 0" class="out-of-stock">Hurry only {{product.stock}} left!</span>
+                </div>
+                <!-- Stock End -->
+
                 <button type="button" *ngIf="product.stock > 0" class="btn btn-primary cart-button" (click)="addToCart(product)">
                   <i class="fa fa-shopping-cart fa-2x"></i>
                 </button>
