@@ -6,20 +6,36 @@ const UserSchema = mongoose.Schema({
     name: {
         type: String
     },
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
     email: {
         type: String,
         required: true,
         lowercase: true,
         unique: true
     },
-    username: {
-        type: String,
-        required: true,
-        unique: true
-    },
     password: {
         type: String,
         required: true
+    },
+    address:{
+        type:String,
+        require:false
+    },
+    city:{
+        type: String,
+        require:false
+    },
+    country:{
+        type: String,
+        require:false
+    },
+    zip:{
+        type: String,
+        require:false
     },
     cart: {
         type: [String],
