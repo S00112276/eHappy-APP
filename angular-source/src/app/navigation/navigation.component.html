@@ -50,7 +50,7 @@
                 <li *ngIf="authService.loggedIn()">
                     <a (click)="onLogoutClick()" href="#">Logout</a>
                 </li>
-                <!-- Login End -->                
+                <!-- Login End -->
 
                 <!-- Pages -->
                 <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
@@ -63,9 +63,11 @@
 
             <!-- Cart -->
             <ul class="nav navbar-nav navbar-right">
-                <ul>
-                    <app-cart></app-cart>
-                </ul>
+                <li>
+                    <ul>
+                        <app-cart></app-cart>
+                    </ul>
+                </li>
             </ul>
             <!-- Cart End -->
 
