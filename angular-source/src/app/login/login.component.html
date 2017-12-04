@@ -24,7 +24,7 @@
         </h5>
     </div>
     <!-- Login End-->
-    <li *ngIf="authService.loggedIn()">
+    <li > <!-- *ngIf="authService.loggedIn()" -->
         <a (click)="onLogoutClick()" href="#">Logout</a>
     </li>
 </form>
