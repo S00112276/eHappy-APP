@@ -28,12 +28,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
 // adding routes
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  // { path: '', redirectTo: 'app', pathMatch: 'full' },
-  // { path: 'app', component: AppComponent},//, canActivate:[AuthGuard]
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent, canActivate:[AuthGuardService] },// 
+  { path: 'profile', component: ProfileComponent, canActivate:[AuthGuardService] },
   { path: 'products', component: ProductListComponent },
-  //   { path: 'product/:id', component: ProductDetailComponent },
   { path: 'cart', component: CartPgComponent },
   { path: 'cart-pg', component: CartPgComponent },
   { path: 'checkout', component: CheckoutComponent }
