@@ -24,9 +24,7 @@
         </h5>
     </div>
     <!-- Login End-->
-    <div class="logout">
-        <li [routerLinkActive]="['inactive']">
-            <a (click)="onLogoutClick()" href="#">Logout</a>
-        </li>
-    </div>
+    <li *ngIf="authService.loggedIn()">
+        <a (click)="onLogoutClick()" href="#">Logout</a>
+    </li>
 </form>

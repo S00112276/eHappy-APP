@@ -11,7 +11,7 @@ module.exports = function (passport) {
      //console.log(jwt_payload);
         User.getUserById(jwt_payload.data._id, (err, user) => {
             if (err) {
-                return done(err, false);
+                return done( err, false);
             }
             if (user) {
                 return done(null, user);

@@ -61,15 +61,16 @@ router.post('/authenticate', (req, res, next) => {
 });
 
 //profile
-router.get('/profile', passport.authenticate('jwt', { session: false }), (req, res, next) => {
-    res.send({ 
+router.get('/profile', passport.authenticate('JWT', { session: false }), (req, res, next) => {
+    // console.log(req.username);
+    res.send({
         user: req.user,
-        username:req.username,
-        email:req.email,
-        address:req.address,
-        city: req.city,
-        country: req.country,
-        zip: req.zip
+        username: req.username,
+        email: req.email
+        // address:req.address,
+        // city: req.city,
+        // country: req.country,
+        // zip: req.zip
     });
 });
 

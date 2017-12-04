@@ -40,7 +40,7 @@ export class AuthService {
   getProfile() {
     let headers = new Headers();
     this.loadToken();
-    headers.append('Authorization', this.authToken);
+    headers.append('authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
     let ep = this.prepEndpoint('users/profile');
     return this.http.get(ep, { headers: headers })
