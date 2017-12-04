@@ -4,8 +4,8 @@ const User = require('../api/models/userModel');
 const config = require('../config/database');
 
 module.exports = function (passport) {
-    var opts = {};
-    opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
+    let opts = {};
+    opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('JWT');
     opts.secretOrKey = config.secret;
     passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
      //console.log(jwt_payload);

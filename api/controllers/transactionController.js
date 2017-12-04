@@ -8,7 +8,6 @@ exports.addTransaction = function (req, res) {
     newTransaction.save({}, function (err, transaction) {
         if (err)
             res.send(err);
-        
         res.json(transaction);      
     });
 };
