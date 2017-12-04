@@ -10,7 +10,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class LoginComponent implements OnInit {
 
-  //for login
+  //component properties for login
   email: String;
   password: String;
 
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.authService.authUser(user).subscribe(data => {
-      console.log("authService/authUser" + data);
+    //  console.log("authService/authUser" + data);
       if (data.success) { 
         this.authService.storeUserData(data.token, data.user);
         this.flashMessage.show('You are now logged in!', {

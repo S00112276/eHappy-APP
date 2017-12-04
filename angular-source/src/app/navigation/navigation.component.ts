@@ -13,17 +13,19 @@ export class NavigationComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private flashMessage: FlashMessagesService) { }
+    private flashMessage: FlashMessagesService
+  ) { }
 
   ngOnInit() {
   }
+
   onLogoutClick() {
     this.authService.logout();
-    this.flashMessage.show('You are logged out', {
+    this.flashMessage.show('You are now logged out!', {
       cssClass: 'alert-success',
-      timeout: 3000
+      timeout: 6000 //6 sec
     });
-    this.router.navigate(['/login']);
+    this.router.navigate(['']);
     return false;
   }
 

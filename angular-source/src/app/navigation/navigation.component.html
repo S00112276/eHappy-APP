@@ -15,7 +15,7 @@
 
         <!-- Desktop Display -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            
+
             <!-- Left Nav-->
             <ul class="nav navbar-nav navbar-left">
                 <li [routerLinkActive]="['inactive']" [routerLinkActiveOptions]="{exact:true}">
@@ -34,8 +34,8 @@
                     </ul>
                 </li>
 
-                <!-- <ul class="nav navbar-nav navbar-right">
-                 <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <ul class="nav navbar-nav navbar-right">
+                    <!--   <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                     <a [routerLink]="['/dashboard']">Dashboard</a>
                 </li> 
                 <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
@@ -46,30 +46,31 @@
                 </li> 
                   <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                     <a [routerLink]="['/register']">Register</a>
-                </li>  
-                <li *ngIf="authService.loggedIn()">
-                    <a (click)="onLogoutClick()" href="#">Logout</a>
-                </li>
-                <!-- Login End -->
-
-                <!-- Pages -->
-                <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-                    <a role="button" [routerLink]="['/products']">Products</a>
-                </li>
-                <!-- Pages End -->
-
-            </ul>
-            <!-- Center Nav End -->
-
-            <!-- Cart -->
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <ul>
-                        <app-cart></app-cart>
+                </li>  -->
+                    <li>
+                        <a (click)="onLogoutClick()" href="#">Logout</a>
+                    </li>
                     </ul>
-                </li>
-            </ul>
-            <!-- Cart End -->
+                    <!-- Login End -->
+
+                        <!-- Pages -->
+                        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                            <a role="button" [routerLink]="['/products']">Products</a>
+                        </li>
+                        <!-- Pages End -->
+
+                </ul>
+                <!-- Center Nav End -->
+
+                <!-- Cart -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <ul>
+                            <app-cart></app-cart>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Cart End -->
 
         </div>
         <!-- Desktop Display End -->
