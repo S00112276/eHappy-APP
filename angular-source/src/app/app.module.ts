@@ -29,7 +29,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent }, //, canActivate:[AuthGuardService]
+  { path: 'profile', component: ProfileComponent, canActivate:[AuthGuardService] }, 
   { path: 'products', component: ProductListComponent },
   { path: 'cart', component: CartPgComponent },
   { path: 'cart-pg', component: CartPgComponent },
