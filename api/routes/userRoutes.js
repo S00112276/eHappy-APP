@@ -11,7 +11,11 @@ router.post('/register', (req, res, next) => {
         name: req.body.name,
         email: req.body.email,
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        address: req.body.address,
+        city: req.body.city,
+        country: req.body.country,
+        zip: req.body.zip
     });
 
     User.addUser(newUser, (err, user) => {
@@ -49,7 +53,11 @@ router.post('/authenticate', (req, res, next) => {
                         id: user._id,
                         name: user.name,
                         username: user.username,
-                        email: user.email
+                        email: user.email,
+                        address: user.address,
+                        city: user.city,
+                        country: user.country,
+                        zip: user.zip
                     }
                 });
             }
@@ -66,11 +74,11 @@ router.get('/profile', passport.authenticate('jwt', { session: false }), (req, r
     res.send({
         user: req.user,
         username: req.username,
-        email: req.email
-        // address:req.address,
-        // city: req.city,
-        // country: req.country,
-        // zip: req.zip
+        email: req.email,
+        address: req.address,
+        city: req.city,
+        country: req.country,
+        zip: req.zip
     });
 });
 

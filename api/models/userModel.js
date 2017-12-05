@@ -38,7 +38,7 @@ const UserSchema = mongoose.Schema({
         require:false
     },
     cart: {
-        type: [String],
+        type: String,
         required: false
     }
 });

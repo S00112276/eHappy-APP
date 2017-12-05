@@ -16,6 +16,10 @@ export class RegisterComponent implements OnInit {
   username: String;
   email: String;
   password: String;
+  address: String;
+  city: String;
+  country: String;
+  zip: String;
   // declare services needed
   constructor(
     private validateService: ValidateService,
@@ -30,7 +34,11 @@ export class RegisterComponent implements OnInit {
       name: this.name,
       email: this.email,
       username: this.username,
-      password: this.password
+      password: this.password,
+      address: this.address,
+      city: this.city,
+      country: this.country,
+      zip: this.zip
     }
     //required fields
     if (!this.validateService.validateRegister(user)) {
@@ -50,7 +58,7 @@ export class RegisterComponent implements OnInit {
       }
       else {
         this.flashMessagesService.show('Something went wrong! Plase try again!', { cssClass: 'alert-danger', timeout: 4000 });
-        this.router.navigate(['/register']);
+        this.router.navigate(['']);
       }
     });
   }

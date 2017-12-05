@@ -27,12 +27,12 @@ export class LoginComponent implements OnInit {
     //create object user for login
     const user = {
       email: this.email,
-      password: this.password
+      password: this.password,
     }
 
     this.authService.authUser(user).subscribe(data => {
-    //  console.log("authService/authUser" + data);
-      if (data.success) { 
+      //  console.log("authService/authUser" + data);
+      if (data.success) {
         this.authService.storeUserData(data.token, data.user);
         this.flashMessage.show('You are now logged in!', {
           cssClass: 'alert-success',
