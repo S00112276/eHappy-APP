@@ -21,9 +21,6 @@
                 <li [routerLinkActive]="['inactive']" [routerLinkActiveOptions]="{exact:true}">
                     <a class="navbar-brand" role="button" [routerLink]="['']">Angular Store</a>
                 </li>
-                <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-                    <a [routerLink]="['/register']">Register</a>
-                </li>
             </ul>
             <!-- Left Nav End -->
 
@@ -41,15 +38,15 @@
                     <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                         <a [routerLink]="['/profile']">Profile</a>
                     </li>
+
+                    <!-- Login End -->
+
+                    <!-- Pages -->
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a role="button" [routerLink]="['/products']">Products</a>
+                    </li>
+                    <!-- Pages End -->
                 </ul>
-                <!-- Login End -->
-
-                <!-- Pages -->
-                <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-                    <a role="button" [routerLink]="['/products']">Products</a>
-                </li>
-                <!-- Pages End -->
-
             </ul>
             <!-- Center Nav End -->
 
