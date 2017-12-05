@@ -33,12 +33,10 @@
                         <app-login></app-login>
                     </ul>
                 </li>
-
                 <ul class="nav navbar-nav navbar-right">
                     <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                         <a [routerLink]="['/profile']">Profile</a>
                     </li>
-
                     <!-- Login End -->
 
                     <!-- Pages -->
@@ -59,10 +57,8 @@
                 </li>
             </ul>
             <!-- Cart End -->
-
         </div>
         <!-- Desktop Display End -->
-
     </div>
 </nav>
 <!-- Nav -->

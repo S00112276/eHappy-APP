@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['products']);
       }
       else {
-        this.flashMessage.show(data.messages, {
+        this.flashMessage.show('Login failed! Please try again!', {
           cssClass: 'alert-danger',
           timeout: 6000
         });

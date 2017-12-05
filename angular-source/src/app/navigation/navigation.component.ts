@@ -18,15 +18,4 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  onLogoutClick() {
-    this.authService.logout();
-    this.flashMessage.show('You are now logged out!', {
-      cssClass: 'alert-success',
-      timeout: 6000 //6 sec
-    });
-    this.router.navigate(['']);
-    return false;
-  }
-
 }
