@@ -18,7 +18,7 @@ export class AuthService {
 
   //subscribe to observable
   registerUser(user) {
-  //  console.log("register user" + user);
+    //  console.log("register user" + user);
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     let ep = this.prepEndpoint('users/register');
@@ -33,10 +33,10 @@ export class AuthService {
     headers.append('Content-Type', 'application/json');
     let ep = this.prepEndpoint('users/authenticate');
     return this.http.post(ep, user, { headers: headers })
-      .map(res => res.json()); 
-      
+      .map(res => res.json());
+
   }
-  
+
   getProfile() {
     let headers = new Headers();
     this.loadToken();

@@ -21,26 +21,26 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    address:{
-        type:String,
-        require:false
-    },
-    city:{
+    address: {
         type: String,
-        require:false
+        require: false
     },
-    country:{
+    city: {
         type: String,
-        require:false
+        require: false
     },
-    zip:{
+    country: {
         type: String,
-        require:false
+        require: false
     },
-    cart: {
+    zip: {
         type: String,
-        required: false
+        require: false
     }
+    // cart: {
+    //     type: String,
+    //     required: false
+    // }
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
