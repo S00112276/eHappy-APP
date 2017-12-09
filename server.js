@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
-// Set port on 3055
-const port = process.env.PORT || 3055;
+// Set port on 8080
+const port = process.env.PORT || 8080;
 // Database
 const config = require('./config/database');
 
