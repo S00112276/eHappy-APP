@@ -22,6 +22,7 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     let ep = this.prepEndpoint('users/register');
+    // return this.http.post( 'http://localhost:3055/users/register', user, { headers: headers }) 
     return this.http.post(ep, user, { headers: headers })
       .map(res => res.json());
   }
