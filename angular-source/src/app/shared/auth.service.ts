@@ -74,7 +74,7 @@ export class AuthService {
     if (this.isDev) {
       return ep;
     } else {
-      return '' + ep;
+      return '/' + ep;
     }
   }
 
