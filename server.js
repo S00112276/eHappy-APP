@@ -7,6 +7,9 @@ const mongoose = require('mongoose');
 const path = require('path');
 // Set port on 3055
 const port = process.env.PORT || 3055;
+//for heroku
+//const port = process.env.PORT || 8080;
+
 // Database
 const config = require('./config/database');
 
