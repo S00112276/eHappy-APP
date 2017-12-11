@@ -6,7 +6,9 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
 // Set port on 8080
-const port = process.env.PORT || 8080;
+//const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3055;
+
 // Database
 const config = require('./config/database');
 
@@ -36,12 +38,13 @@ mongoose.connection.on('connected', () => {
 app.use(cors());
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.static(path.join(__dirname, 'public'))); 
 
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist/index.html'));
-  });
+// app.use(express.static(path.join(__dirname, '/dist')));
 
+// app.get('/*', function(req, res) {
+//     res.sendFile(path.join(__dirname + '/dist/index.html'));
+//   });
 
 // BodyParser Middleware
 app.use(bodyParser.urlencoded({extended: true}));

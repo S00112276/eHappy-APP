@@ -1,3 +1,4 @@
+// Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -5,15 +6,16 @@ import { HttpModule} from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { ReactiveFormsModule } from '@angular/forms';
 
-//services
+// Services
 import { ProductService } from './shared/product.service';
 import { AuthService } from './shared/auth.service';
 import { ValidateService } from './shared/validate.service';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { CartService } from './shared/cart.service';
 
-//components 
+// Components 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
@@ -52,10 +54,11 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    FlashMessagesModule
+    FlashMessagesModule,
   ],
   providers: [
     CartService,
