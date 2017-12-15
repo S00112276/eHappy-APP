@@ -19,8 +19,7 @@ export class CheckoutComponent implements OnInit {
   address: String;
   cardName: String;
   cardNumber: String;
-  expirationMonth: String;
-  expirationYear: String;
+  expiry: String;
   cvc: String;
 
   constructor(private _cartService: CartService) {
