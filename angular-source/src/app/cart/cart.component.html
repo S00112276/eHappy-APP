@@ -8,9 +8,9 @@
         <div class="dropdown-menu dropdown-menu-right cart" aria-labelledby="cart">
             <h1 class="text-center">Your Cart</h1>
             <div *ngIf="cart.count">
-            <div class="scrollbar" id="scrollbar">
-            <div class=".force-overflow">
-                <div *ngFor="let item of cart.items">
+                <div class="scrollbar" id="scrollbar">
+                <div class="force-overflow">
+                <div *ngFor="let item of cart.items">      
                     <div class="row">
                         <div class="col-sm-5">
                             <img class="img-responsive" src="{{item.product.images[0]}}" alt="Card image cap">
