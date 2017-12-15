@@ -15,10 +15,15 @@ export class CartComponent implements OnInit {
   cart: Cart = new Cart();
   private router: Router
   
-  constructor(private cartService: CartService) {
-    this.cart = this.cartService.cart;
+  constructor(private _cartService: CartService) {
+    this.cart = this._cartService.cart;
    }
 
   ngOnInit() {
+  }
+
+  removeItem(product: IProduct) {
+    alert("In cart.ts removeItem");
+    this._cartService.removeItem(product);
   }
 }

@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { IProduct } from '../product-list/product';
 
-export interface CartItem {
+export interface CartItem { // Item in Cart
     product: IProduct;
     count: number;
     totalCost: number;
 }
 
-export class Cart {
+export class Cart { // Cart
     count: number = 0;
     totalCost: number = 0;
     items: CartItem[] = [];
@@ -75,9 +75,9 @@ export class CartService {
         return item;
     }
 
-    // Remove Item from Cart
-    // Update the totalCost and count of items in cart
-    removeItem(item: CartItem) {
+    removeItem(product: IProduct) {
+        alert("In cart.service removeItem");
+        let item: CartItem = this.findItem(product);
         // Delete item from items
         this.remove(item);
         // Decrease count in cart
@@ -88,6 +88,7 @@ export class CartService {
 
     // Returns cart item by product _id
     findItem(product: IProduct): CartItem {
+        alert("In findItem");
         for (let i = 0; i < this.cart.items.length; i++) {
             if (this.cart.items[i].product === product) {
                 return this.cart.items[i];

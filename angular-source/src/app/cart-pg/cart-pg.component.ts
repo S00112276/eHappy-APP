@@ -38,6 +38,10 @@ export class CartPgComponent implements OnInit {
     this._cartService.addProduct(product);
   }
 
+  clearCart() {
+    this._cartService.clearCart();
+  }
+
   openCheckout() {
     var handler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_9Yl0FpMFIPla5WE4mAGlvkZM',

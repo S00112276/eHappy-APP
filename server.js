@@ -8,11 +8,8 @@ const path = require('path');
 // Set port on 8080
 //const port = process.env.PORT || 8080;
 const port = process.env.PORT || 3055;
-<<<<<<< HEAD
-=======
 //for heroku
 //const port = process.env.PORT || 8080;
->>>>>>> master
 
 // Database
 const config = require('./config/database');
