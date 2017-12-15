@@ -117,7 +117,7 @@
             </div>
             <!-- Sort By End -->
 
-            <!-- Refine -->
+            <!-- Refine checkbox animation from https://codepen.io/shshaw/details/WXMdwE/ -->
             <section>
               <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
                 <defs>
@@ -175,7 +175,6 @@
             </section>
             <!-- Refine End -->
 
-
           </div>
         </section>
       </ul>
@@ -183,13 +182,12 @@
   </div>
   <!-- Filter End -->
 
-
   <!-- Products -->
   <div class="col-md-10 container-fluid">
     <div *ngIf="products && filteredProducts.length"></div>
     <div class="col-sm-6 col-md-4 col-lg-3 container-fluid" *ngFor="let product of filteredProducts">
 
-      <!-- Product Card -->
+      <!-- Product Card some taken from here https://codepen.io/olhilton/pen/dXaqxE-->
       <div class="card wrapper">
         <div>
           <img class="img-responsive" src="{{product.images[0]}}" alt="Card image cap">
