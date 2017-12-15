@@ -1,4 +1,4 @@
-// Some Code Here Has Been Sourced from:
+// Code Here Has Been Sourced from:
 // https://github.com/PacktPublishing/Web-Development-with-Bootstrap-4-and-Angular-2-Second-Edition
 
 import { Injectable } from '@angular/core';
