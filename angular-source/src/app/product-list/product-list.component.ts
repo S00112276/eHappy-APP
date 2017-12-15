@@ -66,26 +66,26 @@ export class ProductListComponent implements OnInit {
 
   sortByPopularity(p1: IProduct, p2: IProduct) {
     if (p1.stock > p2.stock) return 1
-    else if (p1.price < p2.price) return 0
-    else return -1
+    else if (p1.price < p2.price) return -1
+    else return 0
   }
 
   sortByPriceLow(p1: IProduct, p2: IProduct) {
     if (p1.price > p2.price) return 1
-    else if (p1.price < p2.price) return 0
-    else return -1
+    else if (p1.price < p2.price) return -1
+    else return 0
   }
 
   sortByPriceHigh(p1: IProduct, p2: IProduct) {
     if (p1.price < p2.price) return 1
-    else if (p1.price > p2.price) return 0
-    else return -1
+    else if (p1.price > p2.price) return -1
+    else return 0
   }
 
   sortByRating(p1: IProduct, p2: IProduct) {
     if (p1.reviews > p2.reviews) return 1
-    else if (p1.price < p2.price) return 0
-    else return -1
+    else if (p1.price < p2.price) return -1
+    else return 0
   }
   //#endregion  
 
@@ -163,9 +163,13 @@ export class ProductListComponent implements OnInit {
       else if (this._skirts == true && product.category == "skirt") {
         this.filteredProducts.push(product);
       }
-      else if (this.filteredProducts == []) {
-        this.filteredProducts == this.products;
-      }
+      else if (this._mens == false 
+        && this._womens == false
+        && this._kids == false 
+        && this._jumpers == false
+        && this._skirts == false) {
+          this.filteredProducts=this.products;
+        }
     });
   }
   //#endregion
