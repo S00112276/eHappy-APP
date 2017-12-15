@@ -60,32 +60,18 @@ export class ProductListComponent implements OnInit {
       this.filteredProducts = this.filteredProducts.sort(this.sortByPriceLow)
     else if (sortBy == 'Price - High to Low')
       this.filteredProducts = this.filteredProducts.sort(this.sortByPriceHigh)
-    else if (sortBy == 'Rating')
-      this.filteredProducts = this.filteredProducts.sort(this.sortByRating)
   }
 
   sortByPopularity(p1: IProduct, p2: IProduct) {
-    if (p1.stock > p2.stock) return 1
-    else if (p1.price < p2.price) return -1
-    else return 0
+    return p1.stock - p2.stock;
   }
 
   sortByPriceLow(p1: IProduct, p2: IProduct) {
-    if (p1.price > p2.price) return 1
-    else if (p1.price < p2.price) return -1
-    else return 0
+    return p1.price - p2.price;
   }
 
   sortByPriceHigh(p1: IProduct, p2: IProduct) {
-    if (p1.price < p2.price) return 1
-    else if (p1.price > p2.price) return -1
-    else return 0
-  }
-
-  sortByRating(p1: IProduct, p2: IProduct) {
-    if (p1.reviews > p2.reviews) return 1
-    else if (p1.price < p2.price) return -1
-    else return 0
+    return p2.price - p1.price;
   }
   //#endregion  
 
@@ -112,36 +98,25 @@ export class ProductListComponent implements OnInit {
     this.refine();
   }
 
-  // Kids
-  _kids: boolean = false;
-  get kids(): boolean {
-    return this._kids;
+  // Jackets
+  _jackets: boolean = false;
+  get jackets(): boolean {
+    return this._jackets;
   }
 
-  set kids(value: boolean) {
-    this._kids = value;
+  set jackets(value: boolean) {
+    this._jackets = value;
     this.refine();
   }
 
-  // Jumper
-  _jumpers: boolean = false;
-  get jumpers(): boolean {
-    return this._jumpers;
+  // Jeans
+  _jeans: boolean = false;
+  get jeans(): boolean {
+    return this._jeans;
   }
 
-  set jumpers(value: boolean) {
-    this._jumpers = value;
-    this.refine();
-  }
-
-  // Kids
-  _skirts: boolean = false;
-  get skirts(): boolean {
-    return this._skirts;
-  }
-
-  set skirts(value: boolean) {
-    this._skirts = value;
+  set jeans(value: boolean) {
+    this._jeans = value;
     this.refine();
   }
 
@@ -154,20 +129,16 @@ export class ProductListComponent implements OnInit {
       else if (this._womens == true && product.department == "womens") {
         this.filteredProducts.push(product);
       }
-      else if (this._kids == true && product.department == "kids") {
+      else if (this._jackets == true && product.category == "jackets") {
         this.filteredProducts.push(product);
       }
-      else if (this._jumpers == true && product.category == "jumper") {
-        this.filteredProducts.push(product);
-      }
-      else if (this._skirts == true && product.category == "skirt") {
+      else if (this._jeans == true && product.category == "jeans") {
         this.filteredProducts.push(product);
       }
       else if (this._mens == false 
         && this._womens == false
-        && this._kids == false 
-        && this._jumpers == false
-        && this._skirts == false) {
+        && this._jackets == false
+        && this._jeans == false) {
           this.filteredProducts=this.products;
         }
     });
