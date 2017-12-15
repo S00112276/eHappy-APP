@@ -1,3 +1,5 @@
+// Sophia Price - S00160641
+
 import { Component, OnInit } from '@angular/core';
 import { Cart, CartService } from '../shared/cart.service';
 import { Router } from '@angular/router';

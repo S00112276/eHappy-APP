@@ -1,3 +1,4 @@
+// Sophia Price - S00160641
 const passport = require('passport');
 const express = require('express');
 const app = express();
@@ -5,26 +6,24 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
-// Set port on 8080
-//const port = process.env.PORT || 8080;
 const port = process.env.PORT || 3055;
 //for heroku
-//const port = process.env.PORT || 8080;
+//const port = process.env.PORT || 8080; // Alexandra
 
 // Database
 const config = require('./config/database');
 
 // Routes
-const productRoutes = require('./api/routes/productRoutes');
-const userRoutes = require('./api/routes/userRoutes');
+const productRoutes = require('./api/routes/productRoutes'); // Daniel O'Regan S00112276
+const userRoutes = require('./api/routes/userRoutes'); // Alexandra
 const transactionRoutes = require('./api/routes/transactionRoutes');
 
 // Models
-const productModel = require('./api/models/productModel');
+const productModel = require('./api/models/productModel'); // Daniel O'Regan S00112276
 const transactionModel = require('./api/models/transactionModel');
 
 // Connect to db
-mongoose.connect(config.database);//
+mongoose.connect(config.database);
 
 // On error
 mongoose.connection.on('error', (err) => {
@@ -40,7 +39,7 @@ mongoose.connection.on('connected', () => {
 app.use(cors());
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, 'public'))); 
+app.use(express.static(path.join(__dirname, 'public')));  // Alexandra
 
 // app.use(express.static(path.join(__dirname, '/dist')));
 
@@ -60,7 +59,7 @@ require('./config/passport')(passport);
 app.use('/users', userRoutes);
 
 transactionRoutes(app);
-productRoutes(app);
+productRoutes(app); // Daniel O'Regan S00112276
 
 app.use(function (req, res) {
     res.status(404).send({ url: req.originalUrl + ' not found' })

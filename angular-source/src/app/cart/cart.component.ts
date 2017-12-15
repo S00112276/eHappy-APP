@@ -1,3 +1,5 @@
+// Sophia Price - S00160641
+
 import { CartPgComponent } from '../cart-pg/cart-pg.component';
 import { IProduct } from '../product-list/product';
 import { Component, OnInit, Input } from '@angular/core';

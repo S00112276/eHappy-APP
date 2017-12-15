@@ -1,3 +1,5 @@
+// Sophia Price - S00160641
+
 'use strict'
 
 const mongoose = require('mongoose');
