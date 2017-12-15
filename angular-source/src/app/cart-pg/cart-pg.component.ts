@@ -58,6 +58,8 @@ export class CartPgComponent implements OnInit {
       currency: 'eur',
       amount: this.cart.totalCost * 100 // make it into euro instead of cents
     });
+
+    console.log(handler);
   }
 
 }
