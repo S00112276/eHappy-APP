@@ -1,6 +1,7 @@
 <!-- Navigation -->
 <app-navigation></app-navigation>
 <!-- End Navigation -->
+<div class="cart">
 <h1 class="text-left padded-txt">Shopping Cart</h1>
 
 <!-- Cart -->
@@ -28,12 +29,12 @@
         <p class="faint">Product Code: {{item.product._id}}</p>
         <p>Size: {{item.product.sizes}}</p>
       </div>
-      <div class="col-sm-4">
-        <button type="button" class="btn btn-default btn-sm" (click)="addProduct(item.product)">
+      <div class="col-sm-4 row">
+        <button type="button" class="btn btn-default btn-sm col-md-1" (click)="addProduct(item.product)">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
-        <p class="padded-prod-name">{{item.count}}</p>
-        <button type="button" class="btn btn-default btn-sm" (click)="removeProduct(item.product)">
+        <p class="padded-prod-name col-md-1">{{item.count}}</p>
+        <button type="button" class="btn btn-default btn-sm col-md-1" (click)="removeProduct(item.product)">
           <span class="glyphicon glyphicon-minus"></span>
         </button>
       </div>
@@ -57,9 +58,14 @@
 </div>
 
 <div>
-<button class="btn btn-default btn-lg btn-block btn-inverse" (click)="clearCart()">Clear Cart</button>
+<div *ngIf="cart.count" class="button-left">
+  <button class="btn btn-default btn-lg btn-block btn-inverse" (click)="clearCart()">Clear Cart</button>
+</div>
+<div class="button-right">
   <a [routerLink]="['/products']" class="btn btn-primary btn-lg btn-block btnblack">
     <i class="fa fa-shopping-cart" aria-hidden="true"></i> Continue Shopping</a>
   <button class="btn btn-default btn-lg btn-block btn-inverse" (click)="openCheckout()">Checkout</button>
+</div>
+</div>
 </div>
 <!-- End Cart Items -->

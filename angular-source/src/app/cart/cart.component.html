@@ -9,7 +9,6 @@
             <h1 class="text-center">Your Cart</h1>
             <div *ngIf="cart.count">
                 <div class="scrollbar" id="scrollbar">
-                <div class="force-overflow">
                 <div *ngFor="let item of cart.items">      
                     <div class="row">
                         <div class="col-sm-5">
@@ -23,10 +22,9 @@
                         </div>
                         <div class="col-sm-2">
                             <a role="button">
-                                <i class="fa fa-remove" (click)="removeItem(item.product)"></i>
+                                <i class="fa fa-remove remove" (click)="removeItem(item.product)"></i>
                             </a>
                         </div>
-                    </div>
                     </div>
                     </div>
                     <br/>
