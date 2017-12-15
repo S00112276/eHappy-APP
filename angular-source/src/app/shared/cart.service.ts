@@ -76,7 +76,6 @@ export class CartService {
     }
 
     removeItem(product: IProduct) {
-        alert("In cart.service removeItem");
         let item: CartItem = this.findItem(product);
         // Delete item from items
         this.remove(item);
@@ -88,9 +87,8 @@ export class CartService {
 
     // Returns cart item by product _id
     findItem(product: IProduct): CartItem {
-        alert("In findItem");
         for (let i = 0; i < this.cart.items.length; i++) {
-            if (this.cart.items[i].product === product) {
+            if (this.cart.items[i].product._id === product._id) {
                 return this.cart.items[i];
             }
         }

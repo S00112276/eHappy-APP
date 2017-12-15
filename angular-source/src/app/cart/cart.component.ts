@@ -23,7 +23,6 @@ export class CartComponent implements OnInit {
   }
 
   removeItem(product: IProduct) {
-    alert("In cart.ts removeItem");
     this._cartService.removeItem(product);
   }
 }

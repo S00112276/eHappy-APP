@@ -29,11 +29,11 @@
         <p>Size: {{item.product.sizes}}</p>
       </div>
       <div class="col-sm-4">
-        <button type="button" class="btn btn-default btn-sm" (click)="addProduct(item)">
+        <button type="button" class="btn btn-default btn-sm" (click)="addProduct(item.product)">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
         <p class="padded-prod-name">{{item.count}}</p>
-        <button type="button" class="btn btn-default btn-sm" (click)="removeProduct(item)">
+        <button type="button" class="btn btn-default btn-sm" (click)="removeProduct(item.product)">
           <span class="glyphicon glyphicon-minus"></span>
         </button>
       </div>
