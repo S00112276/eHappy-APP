@@ -5,9 +5,11 @@
             aria-expanded="false">
             <p id="count" class="text">{{ cart.count }}</p>
         </span>
-        <div class="dropdown-menu dropdown-menu-right cart pre-scrollable" aria-labelledby="cart">
+        <div class="dropdown-menu dropdown-menu-right cart" aria-labelledby="cart">
             <h1 class="text-center">Your Cart</h1>
             <div *ngIf="cart.count">
+            <div class="scrollbar" id="scrollbar">
+            <div class=".force-overflow">
                 <div *ngFor="let item of cart.items">
                     <div class="row">
                         <div class="col-sm-5">
@@ -24,6 +26,8 @@
                                 <i class="fa fa-remove" (click)="removeItem(item.product)"></i>
                             </a>
                         </div>
+                    </div>
+                    </div>
                     </div>
                     <br/>
                 </div>
