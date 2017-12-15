@@ -1,3 +1,6 @@
+// Code Here Has Been Sourced from:
+// https://github.com/PacktPublishing/Web-Development-with-Bootstrap-4-and-Angular-2-Second-Edition
+
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { IProduct } from '../product-list/product';
@@ -17,10 +20,10 @@ export class Cart { // Cart
 @Injectable()
 export class CartService {
     cart: Cart = new Cart();
-    // This methid adds the new product
-    // or increases the number of same products in the cart.
-    // Also updates the totalCost and count of items in the cart.
 
+    // Method to Add New Product
+    // Or increase the number of same products in the cart.
+    // Also updates the totalCost and count of items in the cart.
     public addProduct(product: IProduct): CartItem {
         // Find CartItem in items
         let item: CartItem = this.findItem(product);
@@ -75,6 +78,7 @@ export class CartService {
         return item;
     }
 
+    // Removes a Product from the Cart entirely
     removeItem(product: IProduct) {
         let item: CartItem = this.findItem(product);
         // Delete item from items

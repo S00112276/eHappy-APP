@@ -1,3 +1,5 @@
+// Some Code Here Sourced From:
+// http://blog.mgechev.com/2016/07/05/using-stripe-payment-with-angular-2/
 import { Component, OnInit } from '@angular/core';
 import { Cart, CartService } from '../shared/cart.service';
 import { Router } from '@angular/router';
